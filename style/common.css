@@ -1,0 +1,20 @@
+*, 
+*::after, 
+*::before {
+  box-sizing: border-box;
+  user-select: none;
+  user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+html
+{
+  font-size: 16px;
+  font-family: 'VarelaRound', sans-serif, Arial, 'Times New Roman', Times, serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

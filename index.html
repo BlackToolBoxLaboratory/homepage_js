@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./libs/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="./style/index.css">
+    <link rel="stylesheet" type="text/css" href="./style/pages/index.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>BTB Lab. | JavaScript </title>
+    <meta name="google-site-verification" content="XjkUm8M885lvmNSs9BKe9khMCQY99rSfGsN3Tf6yfBY" />
+
+    <meta property="og:title" content="Black Tool Box Laboratory | JavaScript"/> 
+    <meta property="og:type" content="website"/> 
+    <meta property="og:url" content="https://blacktoolboxlaboratory.github.io/javascript"/>
+    <meta property="og:image" content=""/>
+    <meta name="description" property="og:description" content="Here are some components based on pure JavaScript which made by Black Tool Box Laboratory."/> 
+    
+    <meta property="fb:app_id" content="271733690121245"/>
+
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@vannoel0628" />
+    <meta name="twitter:creator" content="@vannoel0628" />
+  </head>
+  <body id="main">
+    <header class="main_header padding-sm">
+      <div class="header_logo margin-sm radius-md">
+        <div class="logo_content font-4xl font-bold">
+          BJ
+        </div>
+      </div>
+      <div class="header_title margin-sm">
+        <div class="title_main font-bold font-xl">
+          Black Tool Box Laboratory
+        </div>
+        <div class="title_sub">
+          For JavaScript
+        </div>
+      </div>
+      <div id="menu_trigger" class="header_menu font-xl margin-sm">
+        <i class="fas fa-bars fa-fw"></i>
+      </div>
+    </header>
+
+    <div class="main_body">
+    </div>
+
+    <aside id="menu_container" class="main_aside"></aside>
+
+    <script type="text/javascript" src="./libs/jquery/jquery.min.js"></script>
+    <script>
+      const routeMap = [
+        {
+          index: "about", 
+          title:"About", 
+          url: "./pages/about"
+        },
+        {
+          index: "packages", 
+          title: "Packages",
+          url:"./pages/packages",
+          children: [
+            {
+              index: "packages.prototype-languages",
+              title: "Languages",
+              url: "./pages/packages/languages"
+            },
+            {
+              index: "packages.prototype-validator",
+              title: "Validator",
+              url: "./pages/packages/validator"
+            }
+          ]
+        },
+      ];
+      function renderMenu() {
+        var menu = "";
+        menu = "<div class=\"aside_menu\">";
+        menu += renderMenuRecursive(0,routeMap);
+        menu += "</div>"
+        $("#menu_container").html(menu);
+      }
+      function renderMenuRecursive (layer, map) {
+        var route = "";
+        if(map && map.length > 0) {
+          route += "<ul class=\"menu_layer layer-"+ layer +"\">";
+          map.forEach(function(entry) {
+            route += "<li>";
+            route += "<div>"+entry.title+"<div>";
+            route += renderMenuRecursive(layer+1, entry.children);
+            route += "</li>";
+          });
+          route += "</ul>";
+        };
+        return route;
+      };
+      function loadEvent () {
+        $("#menu_trigger").click(function(){
+          if($("#menu_container").hasClass("aside-hidden")) {
+            $("#menu_container").removeClass("aside-hidden");
+          } else{
+            $("#menu_container").addClass("aside-hidden");
+          }
+        });
+      };
+
+      renderMenu();
+      $(document).ready(function(){
+        loadEvent();
+      })
+    </script>
+  </body>
+</html>

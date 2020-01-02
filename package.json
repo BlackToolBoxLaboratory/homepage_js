@@ -1,0 +1,39 @@
+{
+  "name": "homepage_js",
+  "private": true,
+  "version": "1.0.0",
+  "description": "HomePage of BTB Lab. for JavaScript",
+  "keywords": [
+    "BTBLaboratory",
+    "blacktoolbox",
+    "javascript"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "copyVendor": "gulp copyVendor",
+    "updatePage": "gulp updatePage",
+    "backupCodebase": "gulp backupCodebase"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlackToolBoxLaboratory/homepage_js.git"
+  },
+  "author": {
+    "name": "Van Noel",
+    "email": "vannoel0628@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BlackToolBoxLaboratory/homepage_js/issues"
+  },
+  "homepage": "https://blacktoolboxlaboratory.github.io/javascript",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.2.0"
+  }
+}
