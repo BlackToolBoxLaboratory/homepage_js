@@ -30,6 +30,10 @@ gulp.task('updatePage', function(done){
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(gulp.dest(path_page+'/style'))
+  gulp.src(['style/pages/index.css'])
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(autoprefixer('last 2 versions'))
+    .pipe(gulp.dest(path_page+'/style/pages'))
   
   /* font */
   gulp.src(['style/google-fonts/*'])

@@ -44,6 +44,7 @@
     </header>
 
     <div class="main_body">
+      <iframe id="page" class="body_iframe" src="./pages/about.html"></iframe>
     </div>
 
     <aside id="menu_container" class="main_aside"></aside>
@@ -54,41 +55,68 @@
         {
           index: "about", 
           title:"About", 
-          url: "./pages/about"
+          url: "./pages/about.html",
         },
         {
           index: "packages", 
           title: "Packages",
-          url:"./pages/packages",
           children: [
             {
               index: "packages.prototype-languages",
               title: "Languages",
-              url: "./pages/packages/languages"
+              url: "./pages/languages.html"
             },
             {
               index: "packages.prototype-validator",
               title: "Validator",
-              url: "./pages/packages/validator"
+              url: "./pages/validator.html"
             }
           ]
-        },
+        }
       ];
       function renderMenu() {
         var menu = "";
-        menu = "<div class=\"aside_menu\">";
+        menu = "<div class=\"aside_menu padding-x-lg\">";
         menu += renderMenuRecursive(0,routeMap);
         menu += "</div>"
         $("#menu_container").html(menu);
+
+        $(".container_route.route-submenu").click(function() {
+          var target_collapse = $($(this).children(".route_collapsed"));
+          var target_layer = $(this).siblings(".menu_layer")
+          if(target_collapse.hasClass("collapsed-on")) {
+            target_collapse.removeClass("collapsed-on");
+            target_layer.stop().slideDown();
+          } else {
+            target_collapse.addClass("collapsed-on");
+            target_layer.stop().slideUp();
+          }
+        });
+
+        $(".container_route.route-endNode").click(function() {
+          // $('#page').setAttribute("src", this.getAttribute("path"));
+          $("#page").attr("src", this.getAttribute("path"));
+        });
       }
       function renderMenuRecursive (layer, map) {
         var route = "";
         if(map && map.length > 0) {
           route += "<ul class=\"menu_layer layer-"+ layer +"\">";
           map.forEach(function(entry) {
-            route += "<li>";
-            route += "<div>"+entry.title+"<div>";
-            route += renderMenuRecursive(layer+1, entry.children);
+            var paddingLeft = layer*16;
+            route += "<li class=\"layer_container\">";
+              if(entry.children && entry.children.length > 0)
+              {
+                route += "<div class=\"container_route route-submenu padding-y-sm\" >";
+                route += "<div class=\"route_title\" style=\"padding-left:"+paddingLeft+"px\">"+entry.title+"</div>";
+                route += "<div class=\"route_collapsed transition-transform\"><i class=\"fas fa-caret-down fa-fw\"></i></div>";
+                route += "</div>";
+                route += renderMenuRecursive(layer+1, entry.children);
+              } else {
+                route += "<div class=\"container_route route-endNode padding-y-sm\" path=\""+ entry.url +"\">";
+                route += "<div class=\"route_title\" style=\"padding-left:"+paddingLeft+"px\">"+entry.title+"</div>";
+                route += "</div>";
+              }
             route += "</li>";
           });
           route += "</ul>";
@@ -99,7 +127,7 @@
         $("#menu_trigger").click(function(){
           if($("#menu_container").hasClass("aside-hidden")) {
             $("#menu_container").removeClass("aside-hidden");
-          } else{
+          } else {
             $("#menu_container").addClass("aside-hidden");
           }
         });
@@ -108,7 +136,7 @@
       renderMenu();
       $(document).ready(function(){
         loadEvent();
-      })
+      });
     </script>
   </body>
 </html>
