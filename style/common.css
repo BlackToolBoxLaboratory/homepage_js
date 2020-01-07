@@ -15,6 +15,14 @@ html
 }
 
 body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body, 
+div, 
+p, 
+ul {
   margin: 0;
   padding: 0;
 }

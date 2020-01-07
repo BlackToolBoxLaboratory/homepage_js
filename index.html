@@ -4,9 +4,11 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link rel="stylesheet" type="text/css" href="./libs/fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="./style/index.css">
     <link rel="stylesheet" type="text/css" href="./style/pages/index.css">
+
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>BTB Lab. | JavaScript </title>
     <meta name="google-site-verification" content="XjkUm8M885lvmNSs9BKe9khMCQY99rSfGsN3Tf6yfBY" />
@@ -31,8 +33,11 @@
         </div>
       </div>
       <div class="header_title margin-sm">
-        <div class="title_main font-bold font-xl">
+        <div class="title_main main-md font-bold font-xl">
           Black Tool Box Laboratory
+        </div>
+        <div class="title_main main-sm font-bold font-xl">
+          BTB Lab.
         </div>
         <div class="title_sub">
           For JavaScript
@@ -43,37 +48,45 @@
       </div>
     </header>
 
-    <div class="main_body">
-      <iframe id="page" class="body_iframe" src="./pages/about.html"></iframe>
+    <div id="body" class="main_body">
+      <iframe id="page" class="body_iframe" src=""></iframe>
+      <aside id="menu_container" class="body_aside padding-y-lg"></aside>
     </div>
 
-    <aside id="menu_container" class="main_aside"></aside>
 
     <script type="text/javascript" src="./libs/jquery/jquery.min.js"></script>
     <script>
       const routeMap = [
         {
-          index: "about", 
+          id: "ABOUT",
+          path: "about", 
           title:"About", 
           url: "./pages/about.html",
         },
         {
-          index: "packages", 
+          id: "PACKAGES",
+          path: "packages", 
           title: "Packages",
           children: [
             {
-              index: "packages.prototype-languages",
+              id: "PACKAGES_LANGUAGES",
+              path: "packages/languages",
               title: "Languages",
               url: "./pages/languages.html"
             },
             {
-              index: "packages.prototype-validator",
+              id: "PACKAGES_VALIDATOR",
+              path: "packages/validator",
               title: "Validator",
               url: "./pages/validator.html"
             }
           ]
         }
       ];
+      const REG_HASH = /^#(.*)$/;
+      const DEFAULT_ROUTE = 'about';
+      const SIZE_MD = 768;
+
       function renderMenu() {
         var menu = "";
         menu = "<div class=\"aside_menu padding-x-lg\">";
@@ -94,8 +107,7 @@
         });
 
         $(".container_route.route-endNode").click(function() {
-          // $('#page').setAttribute("src", this.getAttribute("path"));
-          $("#page").attr("src", this.getAttribute("path"));
+          window.location.hash = "#"+ this.getAttribute("path");
         });
       }
       function renderMenuRecursive (layer, map) {
@@ -104,6 +116,7 @@
           route += "<ul class=\"menu_layer layer-"+ layer +"\">";
           map.forEach(function(entry) {
             var paddingLeft = layer*16;
+            var classActive = (entry.path === REG_HASH.exec(window.location.hash)[1])? 'route-active' : '';
             route += "<li class=\"layer_container\">";
               if(entry.children && entry.children.length > 0)
               {
@@ -113,7 +126,7 @@
                 route += "</div>";
                 route += renderMenuRecursive(layer+1, entry.children);
               } else {
-                route += "<div class=\"container_route route-endNode padding-y-sm\" path=\""+ entry.url +"\">";
+                route += "<div id=\""+entry.id+"\" class=\"container_route route-endNode padding-y-sm\" path=\""+ entry.path +"\">";
                 route += "<div class=\"route_title\" style=\"padding-left:"+paddingLeft+"px\">"+entry.title+"</div>";
                 route += "</div>";
               }
@@ -123,18 +136,52 @@
         };
         return route;
       };
+      function redirectURL(path) {
+        var route = searchRouteRecursive(path, routeMap);
+        $('.container_route').removeClass("route-active");
+        $('#'+route.id).addClass("route-active");
+        $("#page").attr("src", route.url);
+      }
+      function searchRouteRecursive(path, source) {
+        for(var i=0;i<source.length;i++)
+        {
+          if(source[i].path === path) {
+            return source[i];
+          } else if (path.search(source[i].path)===0) {
+            return searchRouteRecursive(path, source[i].children);
+          }
+        }
+        return {};
+      }
+      function configHashRouter(target) {
+        if(!target.location.hash)
+        {
+          target.location.hash = '#' + DEFAULT_ROUTE;
+          redirectURL(DEFAULT_ROUTE);
+        } else {
+          redirectURL(REG_HASH.exec(target.location.hash)[1]);
+        }
+      }
       function loadEvent () {
         $("#menu_trigger").click(function(){
-          if($("#menu_container").hasClass("aside-hidden")) {
-            $("#menu_container").removeClass("aside-hidden");
+          if($("#body").hasClass("menu-hidden")) {
+            $("#body").removeClass("menu-hidden");
           } else {
-            $("#menu_container").addClass("aside-hidden");
+            $("#body").addClass("menu-hidden");
           }
         });
+
+        window.onhashchange=function(event){
+          configHashRouter(event.target);
+        }
       };
 
-      renderMenu();
       $(document).ready(function(){
+        if(window.innerWidth < SIZE_MD) {
+          $("#body").addClass("menu-hidden");
+        }
+        renderMenu();
+        configHashRouter(window);
         loadEvent();
       });
     </script>

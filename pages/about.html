@@ -1,8 +1,66 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="../libs/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../style/index.css">
+    <link rel="stylesheet" type="text/css" href="../style/pages/about.css">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>BTB Lab. | JavaScript | About </title>
+    <meta name="google-site-verification" content="XjkUm8M885lvmNSs9BKe9khMCQY99rSfGsN3Tf6yfBY" />
+
+    <meta property="og:title" content="Black Tool Box Laboratory | JavaScript | About"/> 
+    <meta property="og:type" content="website"/> 
+    <meta property="og:url" content="https://blacktoolboxlaboratory.github.io/javascript"/>
+    <meta property="og:image" content=""/>
+    <meta name="description" property="og:description" content="We aim to develope some useful tool for building front-end. And they are based on JavaScript only so we could use them into some other JavaScript frameworks."/> 
+    
+    <meta property="fb:app_id" content="271733690121245"/>
+
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@vannoel0628" />
+    <meta name="twitter:creator" content="@vannoel0628" />
   </head>
-  <body style="height:120vh;">
-    about
+  <body id="about" class="page">
+    <div class="page_container">
+      <div class="grid-row direction-column align-items-center">
+        <div class="margin-y-lg">
+          <img class="menu_image" src="../img/BTB_JavaScript.png" alt="BTB_JS">
+        </div>
+        <h1 class="title_main main-md font-xl margin-y-sm">Black Tool Box Laboratory</h1>
+        <h1 class="title_main main-sm font-xl margin-y-sm">BTB Lab.</h1>
+        <p class="title_sub margin-y-sm">For JavaScript</p>
+      </div>
+    </div>
+
+    <footer class="page_footer padding-sm">
+      Copyright © Black Tool Box Laboratory. All rights reserved.
+    </footer>
+
+    <script type="text/javascript" src="../libs/jquery/jquery.min.js"></script>
+    <script>
+      function loadEvent () {
+        $("#menu_trigger").click(function(){
+          if($("#menu_container").hasClass("aside-show")) {
+            $("#menu_container").removeClass("aside-show");
+          } else{
+            $("#menu_container").addClass("aside-show");
+          }
+        })
+        $("#redirect_javascript-menu, #redirect_javascript-block").click(function(){
+          window.open("https://blacktoolboxlaboratory.github.io/javascript/");
+        })
+        $("#redirect_react-menu, #redirect_react-block").click(function(){
+          window.open("https://blacktoolboxlaboratory.github.io/react/v1/");
+        })
+      };
+      $(document).ready(function(){
+        loadEvent();
+      })
+    </script>
   </body>
 </html>

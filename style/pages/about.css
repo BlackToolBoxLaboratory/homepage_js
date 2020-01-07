@@ -1,0 +1,17 @@
+#about .title_main.main-sm {
+  display: none;
+}
+
+#about .title_sub {
+  color: var(--color_gray-l);
+}
+
+/* Lower small size */
+@media only screen and (max-width : 576px) {
+  #about .title_main.main-md {
+    display: none;
+  }
+  #about .title_main.main-sm {
+    display: initial;
+  }
+}

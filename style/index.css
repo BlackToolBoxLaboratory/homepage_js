@@ -2,11 +2,12 @@
 
 @import url('colormap.css');
 @import url('fonts.css');
+@import url('common.css');
+@import url('page.css');
 
+@import url('./class/grid.css');
 @import url('./class/font.css');
 @import url('./class/transition.css');
 @import url('./class/padding.css');
 @import url('./class/margin.css');
 @import url('./class/radius.css');
-
-@import url('common.css');
