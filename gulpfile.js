@@ -20,7 +20,7 @@ gulp.task('copyVendor', function(done) {
   done();
 });
 
-gulp.task('updatePage', function(done){
+gulp.task('updateHomePage', function(done){
   /* html & ico*/
   gulp.src(['index.html', 'favicon.ico'])
     .pipe(gulp.dest(path_page));
@@ -30,7 +30,7 @@ gulp.task('updatePage', function(done){
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(gulp.dest(path_page+'/style'))
-  gulp.src(['style/pages/index.css'])
+  gulp.src(['style/pages/*'])
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(gulp.dest(path_page+'/style/pages'))

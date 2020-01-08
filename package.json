@@ -11,7 +11,7 @@
   "main": "index.js",
   "scripts": {
     "copyVendor": "gulp copyVendor",
-    "updatePage": "gulp updatePage",
+    "updateHomePage": "gulp updateHomePage",
     "backupCodebase": "gulp backupCodebase"
   },
   "repository": {

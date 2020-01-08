@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link rel="stylesheet" type="text/css" href="./libs/fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="./style/index.css">
     <link rel="stylesheet" type="text/css" href="./style/pages/index.css">
@@ -116,7 +116,7 @@
           route += "<ul class=\"menu_layer layer-"+ layer +"\">";
           map.forEach(function(entry) {
             var paddingLeft = layer*16;
-            var classActive = (entry.path === REG_HASH.exec(window.location.hash)[1])? 'route-active' : '';
+            var classActive = (REG_HASH.exec(window.location.hash) && entry.path === REG_HASH.exec(window.location.hash)[1])? 'route-active' : '';
             route += "<li class=\"layer_container\">";
               if(entry.children && entry.children.length > 0)
               {

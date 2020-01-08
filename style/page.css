@@ -5,7 +5,7 @@
   position: relative;
   flex-direction: column;
   background-color: var(--color_gray-lll);
-  /* overflow-x: hidden; */
+  overflow: auto;
 }
 
 .page .page_container {
@@ -15,9 +15,74 @@
   padding: 1rem;
 }
 
-.page_footer {
+.page .container_section {
+  margin: 1rem 0;
+}
+
+.page .container_divider {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+.page .container_divider .divider_line {
+  flex-grow: 1;
+  height: 1px;
+  width: 100%;
+  margin: 0 0.5rem;
+  border-bottom: 1px dashed var(--color_gray);
+  opacity: 0.5;
+}
+.page .container_divider .divider_icon {
+  flex-shrink: 0;
+  margin: 0 0.25rem;
+  opacity: 0.5;
+  font-size: 0.75rem;
+}
+
+/* Foot Navbar */
+.page .page_footNav {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color_gray-ll);
+  flex-shrink: 0;
+}
+.page_footNav .footNav_linkBtn {
+  text-decoration: none;
+  color: var(--color_gray);
+}
+.footNav_linkBtn + .footNav_linkBtn {
+  margin-left: 1rem;
+}
+.footNav_linkBtn.linkBtn-github:hover {
+  color: var(--color_github);
+}
+.footNav_linkBtn.linkBtn-npm:hover {
+  color: var(--color_npm);
+}
+.footNav_linkBtn.linkBtn-linkedin:hover {
+  color: var(--color_linkedin);
+}
+.footNav_linkBtn.linkBtn-wordpress:hover {
+  color: var(--color_wordpress);
+}
+.footNav_linkBtn.linkBtn-email:hover {
+  color: var(--color_email);
+}
+
+.page .page_footer {
   flex-shrink: 0;
   color: var(--color_gray-lll);
   background-color: var(--color_gray-ddd);
   text-align: center;
+}
+
+@media only screen and (min-width : 768px) {
+  .page .page_container {
+    width: 60%;
+    padding: 1rem 0;
+  }
 }

@@ -16,4 +16,10 @@
   --color_gray-ddd: #0d0d0d;
 
   --color_primary: #f0db4f;
+
+  --color_github: #333;
+  --color_npm: #cb3837;
+  --color_linkedin: #0077b5;
+  --color_wordpress: #0073AA;
+  --color_email: #D44638;
 };
