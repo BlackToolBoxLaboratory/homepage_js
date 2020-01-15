@@ -2,16 +2,15 @@
 *::after, 
 *::before {
   box-sizing: border-box;
-  user-select: none;
-  user-drag: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
 }
 
 html
 {
+  color: var(--color_gray-ddd);
   font-size: 16px;
-  font-family: 'VarelaRound', sans-serif, Arial, 'Times New Roman', Times, serif;
+  font-family: 'VarelaRound', 'NotoSansTC', sans-serif, Arial, 'Times New Roman', Times, serif;
 }
 
 body {
@@ -25,4 +24,12 @@ p,
 ul {
   margin: 0;
   padding: 0;
+}
+
+a:link,
+a:visited {
+  color: var(--color_gray); 
+}
+a:hover {
+  color: var(--color_primary);
 }

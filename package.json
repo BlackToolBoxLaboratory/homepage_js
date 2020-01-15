@@ -28,6 +28,7 @@
   },
   "homepage": "https://blacktoolboxlaboratory.github.io/javascript",
   "dependencies": {
+    "@blacktoolbox/prototype-languages": "^1.1.0",
     "@fortawesome/fontawesome-free": "^5.12.0",
     "jquery": "^3.4.1"
   },

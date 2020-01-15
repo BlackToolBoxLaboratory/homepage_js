@@ -6,6 +6,11 @@
   color: var(--color_gray);
 }
 
+#about .packageVersion,
+#about .packageDate {
+  color: var(--color_gray-l);
+}
+
 /* Lower small size */
 @media only screen and (max-width : 576px) {
   #about .title_main.main-md {

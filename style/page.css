@@ -18,6 +18,10 @@
 .page .container_section {
   margin: 1rem 0;
 }
+.page .section_title {
+  display: inline-block;
+  margin: 0 0 0.5rem;
+}
 
 .page .container_divider {
   display: flex;
@@ -52,7 +56,6 @@
 }
 .page_footNav .footNav_linkBtn {
   text-decoration: none;
-  color: var(--color_gray);
 }
 .footNav_linkBtn + .footNav_linkBtn {
   margin-left: 1rem;

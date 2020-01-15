@@ -1,9 +1,9 @@
 .grid-row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -1rem;
-  margin-right: -1rem;
+  margin: 1rem -1rem;
 }
+
 
 .grid-row.row-nowrap {
   flex-wrap: nowrap;
@@ -115,7 +115,7 @@
   max-width: calc(100% * (12/12));
 }
 
-@media only screen and (max-width : 576px) {
+@media only screen and (min-width : 576px) {
   .grid-col.col-sm {
     flex-basis: 0;
     flex-grow: 1;
@@ -183,7 +183,7 @@
   }
 }
 
-@media only screen and (max-width : 768px) {
+@media only screen and (min-width : 768px) {
   .grid-col.col-md {
     flex-basis: 0;
     flex-grow: 1;
@@ -251,7 +251,7 @@
   }
 }
 
-@media only screen and (max-width : 992px) {
+@media only screen and (min-width : 992px) {
   .grid-col.col-lg {
     flex-basis: 0;
     flex-grow: 1;

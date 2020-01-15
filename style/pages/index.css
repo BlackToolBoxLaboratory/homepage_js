@@ -41,16 +41,40 @@
 #main .header_title > .title_sub {
   color: var(--color_gray-ll);
 }
-#main .main_header > .header_menu {
+
+#main .main_header > .header_item {
+  flex-shrink: 0;
+}
+#main .main_header .header_button {
   color: var(--color_gray-ll);
   cursor: pointer;
 }
-#main .main_header > .header_menu:hover {
+#main .main_header .header_button:hover {
   color: var(--color_gray-lll);
 }
-
-#main .main_header > .header_menu {
-  flex-shrink: 0;
+#main .header_item.item-lang {
+  position: relative;
+}
+#main .lang_container {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.25rem);
+}
+#main .lang_container.menu-hidden {
+  display: none;
+}
+#main .lang_container .lang_menu {
+  background-color: var(--color_white);
+}
+#main .lang_container .lang_menu .menu_option {
+  color: var(--color_gray-l);
+  list-style: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+#main .lang_container .lang_menu .menu_option.option-active,
+#main .lang_container .lang_menu .menu_option:hover {
+  color: var(--color_gray-ddd);
 }
 
 #main .main_body {
@@ -64,12 +88,8 @@
 #main .body_iframe {
   flex-grow: 1;
   border: none;
-  margin-right:300px;
   transition: margin-right 0.5s ease-in-out 0s;
   background-color: var(--color_gray-lll);
-}
-#main #body.menu-hidden .body_iframe {
-  margin-right: 0;
 }
 #main .body_aside {
   position: absolute;
@@ -78,7 +98,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--color_gray-dd);
+  background-color: var(--color_mask-d);
   transition: right 0.5s ease-in-out 0s;
 }
 #main #body.menu-hidden .body_aside {
@@ -117,5 +137,24 @@
   }
   #main .title_main.main-sm {
     display: initial;
+  }
+}
+
+@media only screen and (min-width : 576px) {
+  #main .body_aside {
+    position: absolute;
+    flex-shrink: 0;
+    width: 300px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color_gray-dd);
+    transition: right 0.5s ease-in-out 0s;
+  }
+  #main .body_iframe {
+    margin-right:300px;
+  }
+  #main #body.menu-hidden .body_iframe {
+    margin-right: 0;
   }
 }
