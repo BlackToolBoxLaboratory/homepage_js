@@ -10,7 +10,7 @@ html
 {
   color: var(--color_gray-ddd);
   font-size: 16px;
-  font-family: 'VarelaRound', 'NotoSansTC', sans-serif, Arial, 'Times New Roman', Times, serif;
+  font-family: 'VarelaRound', sans-serif, Arial, 'Times New Roman', Times, serif, 'PingFang TC', 'Microsoft JhengHei';
 }
 
 body {

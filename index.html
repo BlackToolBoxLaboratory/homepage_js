@@ -179,7 +179,7 @@
         return {};
       }
       function toggleMenuCollapsed(id, state) {
-        var target_collapse = $($('#'+id).children(".route_collapsed"));
+        var target_collapse = $('#'+id).children(".route_collapsed");
         var target_layer = $('#'+id).siblings(".menu_layer");
         switch(state) {
           case "off":
@@ -192,9 +192,9 @@
             break;
           default:
             if(target_collapse.hasClass("collapsed-on")) {
-              toggleMenuCollapsed(id, 'on');
-            } else {
               toggleMenuCollapsed(id, 'off');
+            } else {
+              toggleMenuCollapsed(id, 'on');
             }
             break;
         }

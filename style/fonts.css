@@ -4,12 +4,6 @@
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: 'NotoSansTC';
-  src: url('./google-fonts/NotoSansTC-Regular.otf');
-  font-weight: normal;
-  font-style: normal;
-}
 
 @font-face {
   font-family: 'Ubuntu';
