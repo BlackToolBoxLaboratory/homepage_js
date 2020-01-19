@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" type="text/css" href="../libs/fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="../style/index.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../style/pages/about.css"> -->
 
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>BTB Lab. | JavaScript | About </title>
@@ -26,7 +25,7 @@
     <meta name="twitter:site" content="@vannoel0628" />
     <meta name="twitter:creator" content="@vannoel0628" />
   </head>
-  <body id="about" class="page">
+  <body id="language" class="page">
     <div class="page_container">
       <div class="page_head">
         <h1 class="page_title">Languages</h1>
@@ -56,7 +55,7 @@ $ npm install --save @blacktoolbox/prototype-languages
 import Language, { initializer } from '@blacktoolbox/prototype-languages';
 
 <code class="pre_notice">// using CommonJS modules</code>
-var Language= require('@blacktoolbox/prototype-languages');
+var Language = require('@blacktoolbox/prototype-languages');
 var initializer = require('@blacktoolbox/prototype-languages').initializer;
 
 <code class="pre_notice">// using in HTML directly</code>
@@ -69,7 +68,7 @@ var initializer = require('@blacktoolbox/prototype-languages').initializer;
       <section class="page_section">
         <div class="section_title">APPLICATION</div>
         <div class="section_block">
-          <div class="block_title">Initializer</div>
+          <div class="block_title">- Initializer</div>
           <div class="block_description">
             Before to use, we have to initialize. The input is an Array and the structure of each entry is { index: '', label: '', dictionary: {...} } as each language.
           </div>
@@ -100,7 +99,7 @@ dictionary: {
           </div>
         </div>
         <div class="section_block">
-          <div class="block_title">Methods</div>
+          <div class="block_title">- Methods</div>
           <div class="block_description">
             We can begin to use after to create a instance from Language. The default language is the first in the initializerconfig
           </div>
@@ -131,10 +130,10 @@ const languages = new globalThis['blacktoolbox-prototype-languages'].default();
             <div class="entry_content">// To translate string by the current language. And the repacement is optional input.</div>
 <pre class="page_pre">
 <code class="pre_notice">// For example: text is the index of 'test %1, test%2, test %1';</code>
-translate('text');
+languages.translate('text');
 >> test %1, test%2, test %1
 
-translate('text', {'%1': 'abc', '%2': 'xyz'});
+languages.translate('text', {'%1': 'abc', '%2': 'xyz'});
 >> test abc, testxyz, test abc
 </pre>
           </div>
