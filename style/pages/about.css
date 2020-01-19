@@ -11,6 +11,11 @@
   color: var(--color_gray-l);
 }
 
+#about .page_section.section-package .package_title {
+  display: inline-block;
+}
+
+
 /* Lower small size */
 @media only screen and (max-width : 576px) {
   #about .title_main.main-md {

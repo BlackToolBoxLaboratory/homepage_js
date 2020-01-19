@@ -13,6 +13,10 @@ html
   font-family: 'VarelaRound', sans-serif, Arial, 'Times New Roman', Times, serif, 'PingFang TC', 'Microsoft JhengHei';
 }
 
+pre {
+  font-family: 'Ubuntu', sans-serif, Arial, 'Times New Roman', Times, serif, 'PingFang TC', 'Microsoft JhengHei';
+}
+
 body {
   height: 100%;
   overflow: hidden;
