@@ -2,7 +2,8 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="./libs/fontawesome/css/all.min.css">
@@ -62,8 +63,10 @@
     </div>
 
     <script type="text/javascript" src="./libs/prototype-languages/index.min.js"></script>
+    <script type="text/javascript" src="./libs/prototype-validator/index.min.js"></script>
     <script type="text/javascript" src="./libs/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="./plugins/prototype-languages.js"></script>
+    <script type="text/javascript" src="./plugins/prototype-validator.js"></script>
     <script>
       const routeMap = [
         {
@@ -217,8 +220,11 @@
       function renderLangMenu() {
         var menu = "";
         menu += "<ul class=\"lang_menu padding-y-sm padding-x-md radius-sm font-sm\">";
+        console.log(' envLang.get().index', envLang.get().index)
         envLang.menu().forEach(function(entry){
           var classActive = (entry.index === envLang.get().index)? 'option-active' : '';
+          console.log('entry',entry)
+          console.log('classActive',classActive)
           menu += "<li class=\"menu_option padding-y-sm padding-x-md "+classActive+"\" onclick=\"setLanguage('"+ entry.index +"')\">"+entry.label+"</li>";
         })
         menu += "</ul>"
@@ -281,11 +287,11 @@
         if(window.innerWidth < SIZE_MD) {
           $("#body").addClass("menu-hidden");
         }
+        detectLang();
         renderLangMenu();
         renderPageMenu();
         configHashRouter(window);
         loadEvent();
-        detectLang();
       });
     </script>
   </body>

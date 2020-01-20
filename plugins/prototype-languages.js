@@ -1,5 +1,5 @@
 window.BTBLang = {
-  class: globalThis['blacktoolbox-prototype-languages'].default,
+  class: globalThis['btblab-languages'].default,
   langLoader: langLoader
 }
 
@@ -33,4 +33,4 @@ function langLoader(currentlang, callbackFn) {
   obj.send();
 }
 
-globalThis['blacktoolbox-prototype-languages'].initializer(config);
+globalThis['btblab-languages'].initializer(config);

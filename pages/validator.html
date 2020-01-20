@@ -2,7 +2,8 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="../libs/fontawesome/css/all.min.css">
@@ -38,8 +39,8 @@
       </div>
       <section class="page_section">
         <div class="section_title">
-          <div class="page_version">Version: 0.1.0</div>
-          <div class="page_releaseDate">Release Date: July. 13, 2019</div>
+          <div class="page_version">Version: 1.0.0</div>
+          <div class="page_releaseDate">Release Date: Jan. 20, 2020</div>
         </div>
         <div class="section_block">
           Most form UI packages have their own validator to use for convenience. But sometimes we don't use only one UI packages to develop every single project. So we try to create the validator generally to adapt to every kind of form UI packages to allow us using just one type of validator coding patteren to develop with every UI packages.
@@ -59,11 +60,14 @@ var Validator = require('@blacktoolbox/prototype-validator');
 
 <code class="pre_notice">// using in HTML directly</code>
 &lt;script type="text/javascript" src="./libs/prototype-validator/index.min.js"&gt;&lt;/script&gt;
-<code class="pre_typeof">Class</code> globalThis['blacktoolbox-prototype-validator'].default;
+<code class="pre_typeof">Class</code> globalThis['btblab-validator'].default;
 </pre>
         </div>
+      </section>
+      <section class="page_section">
+        <div class="section_title">APPLICATION</div>
         <div class="section_block">
-          <div class="block_title">- Event Rules</div>
+          <div class="block_title">Event Rules</div>
           <div class="block_description">
             The validator is designed as a validator for 'event' which means it is not design for 'form'. So it do not bind with form and only triggered by event or function. For this, we need defined the event rule map as follow for example:
           </div>
@@ -71,28 +75,44 @@ var Validator = require('@blacktoolbox/prototype-validator');
 const rules = {
   'accChange' : [
     {
-      rule    : 'length|min:2;max:6;',
-      message : 'Length error',
-      level   : 'error'
+      rule    : 'strLength|min:2',
+      message : 'Username length required 2 at least.'
     }
   ],
   'pwdChange' : [
     {
-      rule    : 'absLength|absLength:6',
-      message : 'Password input error',
-      level   : 'error'
+      rule    : 'strAbsLength|absolute:6',
+      message : 'Password length must be 6.'
+    }
+  ],
+  'valueTest' : [
+    {
+      rule    : 'numAbsValue|absolute:6',
+      message : 'Password length must be 6.'
+    }
+  ],
+  'typeCheck' : [
+    {
+      rule    : 'type|type:number',
+      message : 'Type error.'
+    }
+  ],
+  'ipCheck' : [
+    {
+      rule    : 'format|type:ivp4',
+      message : 'Type error.'
     }
   ],
   'portChange' : [
     {
-      rule    : 'range|min:1;max:65535',
-      message : 'Port limited between 1-65535',
-      level   : 'error'
+      rule    : 'numRange|min:1;max:65535',
+      message : 'Port limited between 1-65535'
     },
     {
-      rule    : 'range|min:1;max:1023',
-      message : 'It may have some conflict with some well known service, while using the port between 1-1023.',
-      level   : 'warning'
+      rule    : function(value){
+        return (value !== 777)
+      },
+      message : 'Port 777 is forbidden.'
     }
   ]
 };
@@ -101,46 +121,46 @@ const rules = {
             Every key name under rule are named with the concept of event, and they are also Array type which means we can have a list to make sure the values are actually we need. Every check rule can have their message and level. Cause the rule are defined in event angle. So we can execute when we need or different value validated with same rule depending on the user's design.
           </div>
           <div class="block_entry">
-            <div class="entry_title">rule:</div>
+            <div class="entry_title">- rule:</div>
             <div class="entry_content">Rule config included type and parameters.</div>
           </div>
           <div class="block_entry">
-            <div class="entry_title">message:</div>
+            <div class="entry_title">- message:</div>
             <div class="entry_content">Message for while fail.</div>
           </div>
         </div>
         <div class="section_block">
-          <div class="block_title">- Rule Type</div>
+          <div class="block_title">Rule Type</div>
           <div class="block_description">
             Now we support some rule:
           </div>
           <div class="block_entry">
-            <div class="entry_title">type|type:number</div>
+            <div class="entry_title">- type|type:[string]</div>
             <div class="entry_content">Check input's typeof.</div>
           </div>
           <div class="block_entry">
-            <div class="entry_title">length|min:1;max:6r</div>
+            <div class="entry_title">- length|min:[number];max:[number]</div>
             <div class="entry_content">Check the string's length between min and max. Otherwise, we can check min or max only like 'length|min:4'.</div>
           </div>
           <div class="block_entry">
-            <div class="entry_title">absLength|absLength:7</div>
+            <div class="entry_title">- absLength|absLength:[number]</div>
             <div class="entry_content">Check the string's absolute length like string.length === absLength.</div>
           </div>
           <div class="block_entry">
-            <div class="entry_title">range|min:20;max:30</div>
+            <div class="entry_title">- range|min:[number];max:[number]</div>
             <div class="entry_content">Check the number's range between min and max. Otherwise, we can check min or max only like 'range|min:4'.</div>
           </div>
           <div class="block_entry">
-            <div class="entry_title">absValue|absValue:1024</div>
+            <div class="entry_title">- absValue|absValue:[number]</div>
             <div class="entry_content">Check the number's absolute value like number === absValue.</div>
           </div>
           <div class="block_entry">
-            <div class="entry_title">format|type:email</div>
-            <div class="entry_content">For now, we only support email format. It will support more usual format.</div>
+            <div class="entry_title">- format|type:[string]</div>
+            <div class="entry_content">Supported: email, numeric, literal, ivp4, mac</div>
           </div>
         </div>
         <div class="section_block">
-          <div class="block_title">- Methods</div>
+          <div class="block_title">Methods</div>
           <div class="block_description">
             Firstly we have to implement it, when we want to use the validator.
           </div>
@@ -149,7 +169,7 @@ const rules = {
 const validator = new Validator();
 
 <code class="pre_notice">// using in HTML directly</code>
-const validator = new globalThis['blacktoolbox-prototype-validator'].default();
+const validator = new globalThis['btblab-validator'].default();
 </pre>
           <div class="block_description">
             And after defined the event-rule-map, we have some methods for using:
@@ -172,7 +192,7 @@ const validator = new globalThis['blacktoolbox-prototype-validator'].default();
           </div>
         </div>
         <div class="section_block">
-          <div class="block_title">- Status</div>
+          <div class="block_title">Status</div>
           <div class="block_description">
             The structure of status for each event:
           </div>

@@ -43,16 +43,12 @@
   padding: 0 0 0 1em;
 }
 .page .section_block .block_title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 900;
   margin: 1rem 0;
 }
 .page .section_block .block_description{
   margin: 0.5rem 0;
-}
-.page .section_block .block_entry .entry_title {
-  font-size: 1.25rem;
-  font-weight: 900;
 }
 .page .section_block .block_entry .entry_content {
   margin: 0.25rem 0;

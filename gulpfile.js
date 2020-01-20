@@ -20,6 +20,10 @@ gulp.task('copyVendor', function(done) {
   /* @blacktoolbox/prototype-languages */
   gulp.src(['node_modules/@blacktoolbox/prototype-languages/umd/index.min.js'])
     .pipe(gulp.dest(path_libs+'/prototype-languages/'));
+
+  /* @blacktoolbox/prototype-validator */
+  gulp.src(['node_modules/@blacktoolbox/prototype-validator/umd/index.min.js'])
+    .pipe(gulp.dest(path_libs+'/prototype-validator/'));
   
   done();
 });
