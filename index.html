@@ -220,11 +220,8 @@
       function renderLangMenu() {
         var menu = "";
         menu += "<ul class=\"lang_menu padding-y-sm padding-x-md radius-sm font-sm\">";
-        console.log(' envLang.get().index', envLang.get().index)
         envLang.menu().forEach(function(entry){
           var classActive = (entry.index === envLang.get().index)? 'option-active' : '';
-          console.log('entry',entry)
-          console.log('classActive',classActive)
           menu += "<li class=\"menu_option padding-y-sm padding-x-md "+classActive+"\" onclick=\"setLanguage('"+ entry.index +"')\">"+entry.label+"</li>";
         })
         menu += "</ul>"
