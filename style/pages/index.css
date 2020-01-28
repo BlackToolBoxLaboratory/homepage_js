@@ -142,14 +142,7 @@
 
 @media only screen and (min-width : 576px) {
   #main .body_aside {
-    position: absolute;
-    flex-shrink: 0;
-    width: 300px;
-    top: 0;
-    right: 0;
-    bottom: 0;
     background-color: var(--color_gray-dd);
-    transition: right 0.5s ease-in-out 0s;
   }
   #main .body_iframe {
     margin-right:300px;
