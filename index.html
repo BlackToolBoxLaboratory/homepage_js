@@ -99,7 +99,7 @@
           ]
         }
       ];
-      const REG_HASH = /^#(.*)$/;
+      const REG_HASH = /^#\/(.*)$/;
       const DEFAULT_ROUTE = 'about';
       const SIZE_MD = 768;
 
@@ -203,12 +203,12 @@
         }
       }
       function redirectHash(path) {
-        window.location.hash = "#"+ path;
+        window.location.hash = "/"+ path;
       }
       function configHashRouter(target) {
         if(!target.location.hash)
         {
-          target.location.hash = '#' + DEFAULT_ROUTE;
+          target.location.hash = '/' + DEFAULT_ROUTE;
           redirectURL(DEFAULT_ROUTE);
         } else {
           redirectURL(REG_HASH.exec(target.location.hash)[1]);
