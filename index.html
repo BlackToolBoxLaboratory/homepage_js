@@ -100,7 +100,6 @@
         }
       ];
       const REG_HASH = /^#\/(.*)$/;
-      const REG_HASH_PREFIX = /^#\//;
       const DEFAULT_ROUTE = 'about';
       const SIZE_MD = 768;
 
@@ -207,7 +206,8 @@
         window.location.hash = "/"+ path;
       }
       function configHashRouter(target) {
-        if(REG_HASH_PREFIX.test(location.hash))
+        var result = REG_HASH.exec(target.location.hash);
+        if(result && result[1])
         {
           redirectURL(REG_HASH.exec(target.location.hash)[1]);
         } else {
