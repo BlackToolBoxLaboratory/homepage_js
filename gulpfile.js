@@ -59,9 +59,9 @@ gulp.task('updateHomePage', function(done){
   gulp.src(['languages/*'])
     .pipe(gulp.dest(path_page+'/languages/'))
   
-  /* img */
-  gulp.src(['img/*'])
-    .pipe(gulp.dest(path_page+'/img/'))
+  /* images */
+  gulp.src(['images/*'])
+    .pipe(gulp.dest(path_page+'/images/'))
 
   /* pages */
   gulp.src(['pages/*'])
@@ -80,8 +80,8 @@ gulp.task('backupCodebase', function(done) {
     .pipe(gulp.dest(path_backup+'/plugins/'));
   gulp.src(['languages/*'])
     .pipe(gulp.dest(path_backup+'/languages/'));
-  gulp.src(['img/*'])
-    .pipe(gulp.dest(path_backup + '/img/'));
+  gulp.src(['images/*'])
+    .pipe(gulp.dest(path_backup + '/images/'));
   gulp.src(['pages/*'])
     .pipe(gulp.dest(path_backup+'/pages/'));
   /* others */        
