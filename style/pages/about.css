@@ -15,7 +15,6 @@
   display: inline-block;
 }
 
-
 /* Lower small size */
 @media only screen and (max-width : 576px) {
   #about .title_main.main-md {
@@ -23,5 +22,12 @@
   }
   #about .title_main.main-sm {
     display: initial;
+  }
+
+  #about .page_section.section-package .package_title {
+    font-size: 1.25rem;
+  }
+  #about .page_section.section-package .package_description {
+    margin-top: 0.5rem;
   }
 }
