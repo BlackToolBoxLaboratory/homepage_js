@@ -67,6 +67,10 @@ gulp.task('updateHomePage', function(done){
   gulp.src(['pages/*'])
     .pipe(gulp.dest(path_page+'/pages/'))
 
+  /* sitemap */
+  gulp.src(['sitemap.xml'])
+    .pipe(gulp.dest(path_page))
+
   done();
 });
 
@@ -93,6 +97,7 @@ gulp.task('backupCodebase', function(done) {
       'gulpfile.js',
       'index.html',
       'favicon.ico',
+      'sitemap.xml'
     ])
     .pipe(gulp.dest(path_backup));
   done();
