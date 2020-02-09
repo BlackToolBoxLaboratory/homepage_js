@@ -105,6 +105,7 @@
 .page .page_head .head_linkBtn,
 .page .page_footNav .footNav_linkBtn {
   text-decoration: none;
+  color: var(--color_gray-d);
 }
 .page .footNav_linkBtn + .footNav_linkBtn {
   margin-left: 1rem;
