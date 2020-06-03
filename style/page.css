@@ -36,7 +36,7 @@
 }
 
 .page .page_section + .page_section {
-  margin: 1.5rem 0 0;
+  margin-top: 1.5rem;
 }
 .page .page_section .section_title {
   font-size: 0.875rem;
