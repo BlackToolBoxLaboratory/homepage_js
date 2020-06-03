@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="./libs/fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="./style/index.css">
-    <link rel="stylesheet" type="text/css" href="./style/pages/index.css">
+    <link rel="stylesheet" type="text/css" href="./style/pages/main.css">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>BTB Lab. | JavaScript </title>
@@ -56,34 +56,31 @@
         <i class="fas fa-bars fa-fw header_button font-lg" onclick="togglePageMenu()"></i>
       </div>
     </header>
-
-    <div id="body" class="main_body">
-      <iframe id="page" class="body_iframe" src=""></iframe>
-      <div class="body_footNav">
-        <a class="footNav_linkBtn linkBtn-paypal" href="https://www.paypal.me/vannoel0628" target="_blank">
-          <i class="fab fa-paypal fa-fw"></i>
-        </a>
-        <a class="footNav_linkBtn linkBtn-github" href="https://github.com/BlackToolBoxLaboratory" target="_blank">
-          <i class="fab fa-github fa-fw"></i>
-        </a>
-        <a class="footNav_linkBtn linkBtn-npm" href="https://www.npmjs.com/org/blacktoolbox" target="_blank">
-          <i class="fab fa-npm fa-fw"></i>
-        </a>
-        <a class="footNav_linkBtn linkBtn-linkedin" href="https://www.linkedin.com/company/black-tool-box-laboratory/" target="_blank">
-          <i class="fab fa-linkedin fa-fw"></i>
-        </a>
-        <a class="footNav_linkBtn linkBtn-wordpress" href="https://vannoel0628.wordpress.com/" target="_blank">
-          <i class="fab fa-wordpress fa-fw"></i>
-        </a>
-        <a class="footNav_linkBtn linkBtn-email" href="mailto://vannoel0628@gmail.com" target="_blank">
-          <i class="far fa-envelope fa-fw"></i>
-        </a>
-      </div>
-      <footer class="body_footer font-xs padding-md">
-        Copyright © Black Tool Box Laboratory. All rights reserved.
-      </footer>
-      <aside id="pageMenu_container" class="body_aside padding-y-lg"></aside>
+    <iframe id="page" class="main_iframe" src=""></iframe>
+    <div class="main_footNav">
+      <a class="footNav_linkBtn linkBtn-paypal" href="https://www.paypal.me/vannoel0628" target="_blank">
+        <i class="fab fa-paypal fa-fw"></i>
+      </a>
+      <a class="footNav_linkBtn linkBtn-github" href="https://github.com/BlackToolBoxLaboratory" target="_blank">
+        <i class="fab fa-github fa-fw"></i>
+      </a>
+      <a class="footNav_linkBtn linkBtn-npm" href="https://www.npmjs.com/org/blacktoolbox" target="_blank">
+        <i class="fab fa-npm fa-fw"></i>
+      </a>
+      <a class="footNav_linkBtn linkBtn-linkedin" href="https://www.linkedin.com/company/black-tool-box-laboratory/" target="_blank">
+        <i class="fab fa-linkedin fa-fw"></i>
+      </a>
+      <a class="footNav_linkBtn linkBtn-wordpress" href="https://vannoel0628.wordpress.com/" target="_blank">
+        <i class="fab fa-wordpress fa-fw"></i>
+      </a>
+      <a class="footNav_linkBtn linkBtn-email" href="mailto://vannoel0628@gmail.com" target="_blank">
+        <i class="far fa-envelope fa-fw"></i>
+      </a>
     </div>
+    <footer class="main_footer font-xs padding-md">
+      Copyright © Black Tool Box Laboratory. All rights reserved.
+    </footer>
+    <aside id="pageMenu_container" class="main_aside "></aside>
 
     <script type="text/javascript" src="./libs/prototype-languages/index.min.js"></script>
     <script type="text/javascript" src="./libs/prototype-validator/index.min.js"></script>
@@ -276,13 +273,13 @@
       function togglePageMenu(state) {
         switch(state) {
           case 'hide':
-            $("#body").addClass("menu-hidden");
+            $("#pageMenu_container").addClass("menu-hidden");
             break;
           case 'show':
-            $("#body").removeClass("menu-hidden");
+            $("#pageMenu_container").removeClass("menu-hidden");
             break;
           default:
-            if($("#body").hasClass("menu-hidden")) {
+            if($("#pageMenu_container").hasClass("menu-hidden")) {
               togglePageMenu('show');
             } else {
               togglePageMenu('hide');
@@ -306,7 +303,7 @@
 
       $(document).ready(function(){
         if(window.innerWidth < SIZE_MD) {
-          $("#body").addClass("menu-hidden");
+          $("#pageMenu_container").addClass("menu-hidden");
         }
         detectLang();
         renderLangMenu();
