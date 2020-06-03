@@ -7,13 +7,11 @@
 }
 
 #main .main_header {
-  flex-shrink: 0;
   background-color: var(--color_black);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
   z-index: 1;
 }
 
@@ -79,7 +77,6 @@
 
 #main .main_iframe {
   flex-grow: 1;
-  flex-shrink: 0;
   border: none;
   transition: margin-right 0.5s ease-in-out 0s;
   background-color: var(--color_gray-lll);
@@ -128,13 +125,11 @@
 
 #main .main_footNav {
   display: flex;
-  position: relative;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   background-color: var(--color_gray-l);
-  flex-shrink: 0;
 }
 #main .main_footNav .footNav_linkBtn {
   font-size:1.25rem;
@@ -164,7 +159,6 @@
 }
 
 #main .main_footer {
-  flex-shrink: 0;
   color: var(--color_gray-lll);
   background-color: var(--color_gray-ddd);
   text-align: center;
