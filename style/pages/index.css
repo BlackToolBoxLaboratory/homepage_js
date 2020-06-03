@@ -142,10 +142,7 @@
 
 @media only screen and (min-width : 576px) {
   #main .body_aside {
-    background-color: var(--color_gray-dd);
-  }
-  #main .body_iframe {
-    margin-right:300px;
+    background-color: var(--color_mask-l);
   }
   #main #body.menu-hidden .body_iframe {
     margin-right: 0;
