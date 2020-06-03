@@ -27,36 +27,36 @@
     <meta name="twitter:creator" content="@vannoel0628" />
   </head>
   <body id="main">
-    <header class="main_header padding-sm">
-      <div class="header_logo margin-sm radius-md">
-        <div class="logo_content font-3xl font-bold">
-          BJ
+    <div class="main_container">
+      <header class="main_header padding-sm">
+        <div class="header_logo margin-sm radius-md">
+          <div class="logo_content font-3xl font-bold">
+            BJ
+          </div>
         </div>
-      </div>
-      <div class="header_title margin-sm">
-        <div class="title_main main-md font-bold font-lg">
-          Black Tool Box Laboratory
+        <div class="header_title margin-sm">
+          <div class="title_main main-md font-bold font-lg">
+            Black Tool Box Laboratory
+          </div>
+          <div class="title_main main-sm font-bold font-lg">
+            BTB Lab.
+          </div>
+          <div class="title_sub">
+            For JavaScript
+          </div>
         </div>
-        <div class="title_main main-sm font-bold font-lg">
-          BTB Lab.
+        <div id="homepage_opener" class="header_item margin-md">
+          <i class="fas fa-home fa-fw header_button font-lg" onclick="redirectHomepage()"></i>
         </div>
-        <div class="title_sub">
-          For JavaScript
+        <div id="language_opener" class="header_item item-lang margin-md">
+          <i class="fas fa-globe fa-fw header_button font-lg" onclick="toggleLangMenu()"></i>
+          <div id="language_menu" class="lang_container menu-hidden"></div>
         </div>
-      </div>
-      <div id="homepage_opener" class="header_item margin-md">
-        <i class="fas fa-home fa-fw header_button font-lg" onclick="redirectHomepage()"></i>
-      </div>
-      <div id="language_opener" class="header_item item-lang margin-md">
-        <i class="fas fa-globe fa-fw header_button font-lg" onclick="toggleLangMenu()"></i>
-        <div id="language_menu" class="lang_container menu-hidden"></div>
-      </div>
 
-      <div id="menu_trigger" class="header_item margin-md">
-        <i class="fas fa-bars fa-fw header_button font-lg" onclick="togglePageMenu()"></i>
-      </div>
-    </header>
-    <div class="main_body">
+        <div id="menu_trigger" class="header_item margin-md">
+          <i class="fas fa-bars fa-fw header_button font-lg" onclick="togglePageMenu()"></i>
+        </div>
+      </header>
       <iframe id="page" class="main_iframe" src=""></iframe>
       <div class="main_footNav">
         <a class="footNav_linkBtn linkBtn-paypal" href="https://www.paypal.me/vannoel0628" target="_blank">
