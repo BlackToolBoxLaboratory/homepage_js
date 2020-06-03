@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
+  width: 100vw;
+  /* overflow-x: hidden; */
 }
 
 #main .main_header {
@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 #main .main_header > .header_logo {
@@ -77,6 +77,14 @@
   color: var(--color_gray-ddd);
 }
 
+#main .main_body {
+  flex-grow: 1;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
 #main .main_iframe {
   flex-grow: 1;
   border: none;
@@ -92,9 +100,6 @@
   bottom: 0;
   background-color: var(--color_mask-d);
   transition: right 0.5s ease-in-out 0s;
-}
-#main .main_aside .aside_menu {
-  margin-top: 4.5rem;
 }
 #main .main_aside.menu-hidden {
   right: -100%;
