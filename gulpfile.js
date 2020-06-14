@@ -1,4 +1,6 @@
 const gulp = require('gulp');
+const del = require('del');
+
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 
@@ -28,7 +30,10 @@ gulp.task('copyVendor', function(done) {
   done();
 });
 
-gulp.task('updateHomePage', function(done){
+gulp.task('updateHomePage', async function(done){
+  /* clean files */
+  await del([path_page + '/'], {force: true})
+  
   /* html & ico*/
   gulp.src(['index.html', 'favicon.ico'])
     .pipe(gulp.dest(path_page));
@@ -74,7 +79,10 @@ gulp.task('updateHomePage', function(done){
   done();
 });
 
-gulp.task('backupCodebase', function(done) {  
+gulp.task('backupCodebase', async function(done) {  
+  /* clean files */
+  await del([path_backup + '/'], {force: true})
+
   /* src */
   gulp.src(['style/**/*'])
     .pipe(gulp.dest(path_backup + '/style/'));
