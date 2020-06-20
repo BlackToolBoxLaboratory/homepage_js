@@ -33,7 +33,8 @@
 #main .header_title > .title_main {
   color: var(--color_primary);
 }
-#main .title_main.main-sm {
+#main .title_main.main-sm,
+#main .title_sub.sub-sm {
   display: none;
 }
 #main .header_title > .title_sub {
@@ -166,11 +167,13 @@
 
 /* Lower Small Size */
 @media only screen and (max-width : 576px) {
-  #main .title_main.main-md {
+  #main .title_main.main-md,
+  #main .title_sub.sub-md {
     display: none;
   }
-  #main .title_main.main-sm {
-    display: initial;
+  #main .title_main.main-sm, 
+  #main .title_sub.sub-sm {
+    display: block;
   }
 }
 
