@@ -27,6 +27,7 @@ function langLoader(currentlang, callbackFn) {
       if(typeof callbackFn == 'function') {
         callbackFn();
       }
+      top.document.getElementById('page').src = top.document.getElementById('page').src;
       return JSON.parse(obj.responseText);
     }
   };

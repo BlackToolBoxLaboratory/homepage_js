@@ -140,7 +140,7 @@
         if(LS_Object.lang)
         {
           envLang.set(LS_Object.lang)
-          window.BTBLang.langLoader(LS_Object.lang, translateAll)
+          window.BTBLang.langLoader(LS_Object.lang, translateAll);
         } else {
           const userLang = window.navigator.language || window.navigator.userLanguage; 
           const result = envLang.menu().find((item) => {
