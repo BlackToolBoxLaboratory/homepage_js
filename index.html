@@ -46,6 +46,9 @@
           </div>
         </div>
         <div id="homepage_opener" class="header_item margin-md">
+          <i class="fas fa-building fa-fw header_button font-lg" onclick="openLab()"></i>
+        </div>
+        <div id="homepage_opener" class="header_item margin-md">
           <i class="fas fa-home fa-fw header_button font-lg" onclick="redirectHomepage()"></i>
         </div>
         <div id="language_opener" class="header_item item-lang margin-md">
@@ -232,6 +235,9 @@
           target.location.hash = '/' + DEFAULT_ROUTE;
           redirectURL(DEFAULT_ROUTE);
         }
+      }
+      function openLab() {
+        window.open('https://blacktoolboxlaboratory.github.io/');
       }
       function redirectHomepage() {
         location.href = location.origin + location.pathname;
