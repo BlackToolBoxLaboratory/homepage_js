@@ -136,15 +136,11 @@
           envLang.set(LS_Object.lang)
           window.BTBLang.langLoader(LS_Object.lang, translateAll)
         } else {
-          switch((window.navigator.language || window.navigator.browserLanguage).toLowerCase().slice(0, 2))
-          {
-            case 'zh':
-              setLanguage('zh_TW');
-              break;
-            default:
-              setLanguage('en_US');
-              break;
-          }
+          const userLang = window.navigator.language || window.navigator.userLanguage; 
+          const result = envLang.menu().find((item) => {
+            return userLang.search(new RegExp(item.index, 'i')) >= 0;
+          });
+          setLanguage((result)? result.index : envLang.get().index);
         }
       }
 

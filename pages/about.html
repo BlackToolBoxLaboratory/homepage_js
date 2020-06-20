@@ -32,9 +32,9 @@
         <img class="margin-y-lg" src="../images/BTB_JavaScript.png" alt="BTB_JS">
         <h1 class="title_main main-md font-xl margin-y-sm">Black Tool Box Laboratory</h1>
         <h1 class="title_main main-sm font-xl margin-y-sm">BTB Lab.</h1>
-        <p class="title_sub margin-y-sm">For JavaScript</p>
+        <p class="title_sub margin-y-sm">With JavaScript</p>
       </div>
-      <div class="page_section">
+      <div class="page_section" btb-lang="about.description">
         I aim to develope some useful tool for front-end development. And they are based on JavaScript only so we could use them into some other JavaScript frameworks. And they are called "prototype-" as their prefix means we can use them with React, Vue, ... so on. While using, if you find some questions, bugs or issues. Or having some ideas. Please feel free to let me know.
       </div>
       <div class="page_section grid-row justify-content-center">
@@ -55,12 +55,12 @@
         <div class="divider_line"></div>
       </div>
       <div class="page_section grid-row justify-content-center">
-        <span>If you like all the works in BTB Lab. Please </span>
+        <span btb-lang="about.donate.1">If you like all the works in BTB Lab. Please </span>
         <a href="https://www.paypal.me/vannoel0628" target="_blank">
           <i class="fab fa-paypal fa-fw"></i>
-          <span>buy me a coffee</span>
+          <span btb-lang="about.donate.2">buy me a coffee</span>
         </a>
-        <span>. </span>
+        <span btb-lang="about.donate.3">. </span>
       </div>
       <div class="page_divider">
         <div class="divider_line"></div>
@@ -75,17 +75,23 @@
       </div>
       <div class="page_section section-package grid-row">
         <div class="grid-col col-md-3">
-          <div class="package_title font-bold">Languages</div>
+          <div class="package_title font-bold" btb-lang="route.languages">Languages</div>
           <a href="#" onclick="redirectHash('packages/languages')">
             <i class="fas fa-link fa-fw"></i>
           </a>
         </div>
         <div class="grid-col col-md">
-          <div class="package_description">
+          <div class="package_description" btb-lang="package.languages.description">
             For developing the web-side of international services, we usually have the requirement to develop with the feature of multiple-languages supported. We already have a lot of masterpice such like i18n. But here we created our own multiple-languages package for lowing down the dependencies. And after adding a little code, we can apply it with other javascript frameworks like React, Vue ... and so on. 
           </div>
-          <div class="packageVersion margin-y-sm">Version 1.1.1</div>
-          <div class="packageDate margin-y-sm">Updated: Jan. 20, 2020</div>
+          <div class="packageVersion margin-y-sm">
+            <span btb-lang="package.version_colon">Version: </span>
+            <span>1.1.1</span>
+          </div>
+          <div class="packageDate margin-y-sm">
+            <span btb-lang="package.release_colon">Release Date: </span>
+            <span>Jan. 20, 2020</span>
+          </div>
         </div>
       </div>
       <div class="page_divider">
@@ -101,26 +107,42 @@
       </div>
       <div class="page_section section-package grid-row">
         <div class="grid-col col-md-3">
-          <div class="package_title font-bold">Validator</div>
+          <div class="package_title font-bold" btb-lang="route.validator">Validator</div>
           <a href="#" onclick="redirectHash('packages/validator')">
             <i class="fas fa-link fa-fw"></i>
           </a>
         </div>
         <div class="grid-col col-md">
-          <div class="package_description">
+          <div class="package_description" btb-lang="package.validator.description">
             Most form UI packages have their own validator to use for convenience. But sometimes we don't use only one UI packages to develop every single project. So we try to create the validator generally to adapt to every kind of form UI packages to allow us using just one type of validator coding patteren to develop with every UI packages.
           </div>
-          <div class="packageVersion margin-y-sm">Version 1.0.0</div>
-          <div class="packageDate margin-y-sm">Updated: Jan. 20, 2020</div>
+          <div class="packageVersion margin-y-sm">
+            <span btb-lang="package.version_colon">Version: </span>
+            <span>1.0.0</span>
+          </div>
+          <div class="packageDate margin-y-sm">
+            <span btb-lang="package.updated_colon">Updated: </span>
+            <span>Jan. 20, 2020</span>
+          </div>
         </div>
       </div>
     </div>
 
     <script type="text/javascript" src="../libs/jquery/jquery.min.js"></script>
     <script>
+      function translateAll() {
+        $('[btb-lang]').each(function(index, entry){
+          $(entry).html(top.envLang.translate(entry.getAttribute('btb-lang')))
+        })
+      }
+
       function redirectHash(path) {
         top.location.hash = "#/"+ path;
       }
+
+      $(document).ready(function(){
+        translateAll();
+      });
     </script>
   </body>
 </html>

@@ -4,8 +4,8 @@ window.BTBLang = {
 }
 
 const config = [
-  { index: 'en_US', label: 'English', dictionary: {} },
-  { index: 'zh_TW', label: '繁體中文', dictionary: {} },
+  { index: 'en', label: 'English', dictionary: {} },
+  { index: 'zh', label: '繁體中文', dictionary: {} }
 ];
 
 function langLoader(currentlang, callbackFn) {
