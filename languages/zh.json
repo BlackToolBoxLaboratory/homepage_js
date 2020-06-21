@@ -16,7 +16,7 @@
   "package": {
     "version_colon": "發布版本：",
     "release_colon": "發布日期：",
-    "secation": {
+    "section": {
       "title": {
         "installation": "安裝",
         "application": "應用"
