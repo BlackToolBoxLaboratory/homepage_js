@@ -53,12 +53,17 @@
           "title": "Event Rules",
           "description": {
             "example": "The validator is designed as a validator for 'event' which means it is not design for 'form'. So it do not bind with form and only triggered by event or function. For this, we need defined the event rule map as follow for example as following.",
-            "structure": "Every key name under rule are named with the concept of event, and they are also Array type which means we can have a list to make sure the values are actually we need. Every check rule can have their message. Cause the rule are defined in event angle. So we can execute when we need or different value validated with same rule depending on the user's design.",
-            "type": "Now we support some rule."
+            "structure": "Every key name under rule are named with the concept of event, and they are also Array type which means we can have a list to make sure the values are actually we need. Every check rule can have their message. Cause the rule are defined in event angle. So we can execute when we need or different value validated with same rule depending on the user's design."
           },
           "rule": "Rule config included type and parameters." ,
-          "message": "Message for while fail.",
-          "ruleType": {
+          "message": "Message for while fail."
+        },
+        "ruleType": {
+          "title": "Rule Type",
+          "description": {
+            "type": "Now we support some rule."
+          },
+          "rule": {
             "type": "Check input's typeof.",
             "stringLength": "Check the string's length between min and max. Otherwise, we can check min or max only like 'length|min:4'.",
             "absoluteLength": "Check the string's absolute length like string.length === absLength.",
