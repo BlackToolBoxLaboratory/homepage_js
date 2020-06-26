@@ -146,23 +146,23 @@ const rules = {
           </div>
           <div class="block_entry">
             <div class="entry_title">- length|min:[number];max:[number]</div>
-            <div class="entry_content" btb-lang="package.validator.block.ruleType.rule.ruleType.stringLength">Check the string's length between min and max. Otherwise, we can check min or max only like 'length|min:4'.</div>
+            <div class="entry_content" btb-lang="package.validator.block.ruleType.rule.stringLength">Check the string's length between min and max. Otherwise, we can check min or max only like 'length|min:4'.</div>
           </div>
           <div class="block_entry">
             <div class="entry_title">- absLength|absLength:[number]</div>
-            <div class="entry_content" btb-lang="package.validator.block.ruleType.rule.ruleType.absoluteLength">Check the string's absolute length like string.length === absLength.</div>
+            <div class="entry_content" btb-lang="package.validator.block.ruleType.rule.absoluteLength">Check the string's absolute length like string.length === absLength.</div>
           </div>
           <div class="block_entry">
             <div class="entry_title">- range|min:[number];max:[number]</div>
-            <div class="entry_content" btb-lang="package.validator.block.ruleType.rule.ruleType.numericRange">Check the number's range between min and max. Otherwise, we can check min or max only like 'range|min:4'.</div>
+            <div class="entry_content" btb-lang="package.validator.block.ruleType.rule.numericRange">Check the number's range between min and max. Otherwise, we can check min or max only like 'range|min:4'.</div>
           </div>
           <div class="block_entry">
             <div class="entry_title">- absValue|absValue:[number]</div>
-            <div class="entry_content" btb-lang="package.validator.block.ruleType.rule.ruleType.absoluteValue">Check the number's absolute value like number === absValue.</div>
+            <div class="entry_content" btb-lang="package.validator.block.ruleType.rule.absoluteValue">Check the number's absolute value like number === absValue.</div>
           </div>
           <div class="block_entry">
             <div class="entry_title">- format|type:[string]</div>
-            <div class="entry_content" btb-lang="package.validator.block.ruleType.rule.ruleType.format">Supported: email, numeric, literal, ivp4, mac</div>
+            <div class="entry_content" btb-lang="package.validator.block.ruleType.rule.format">Supported: email, numeric, literal, ivp4, mac</div>
           </div>
         </div>
         <div class="section_block">
@@ -205,7 +205,7 @@ const validator = new globalThis['btblab-validator'].default();
 <pre class="page_pre">
 const structureStatus = function() {
   this.message = '';
-  this.status = 'none';
+  this.status = null;
 };
 </pre>
           <div class="block_description" btb-lang="package.validator.block.status.description.state">
