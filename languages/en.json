@@ -23,7 +23,7 @@
       }
     },
     "languages": {
-      "description": "For developing the web-side of international services, we usually have the requirement to develop with the feature of multiple-languages supported. We already have a lot of masterpice such like i18n. But here we created our own multiple-languages package for lowing down the dependencies. And after adding a little code, we can apply it with other javascript frameworks like React, Vue ... and so on.",
+      "description": "For developing the website of international services, we usually have the requirement to develop with the feature of multiple-languages supported. We already have a lot of masterpice such like i18n. But here we created our own multiple-languages package for lowing down the dependencies. And after adding a little code, we can apply it with other javascript frameworks like React, Vue ... and so on.",
       "block": {
         "initializer": {
           "title": "Initializer",
