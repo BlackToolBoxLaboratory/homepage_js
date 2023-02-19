@@ -27,6 +27,16 @@ gulp.task('copyVendor', function(done) {
   gulp.src(['node_modules/@blacktoolbox/prototype-validator/umd/index.min.js'])
     .pipe(gulp.dest(path_libs+'/prototype-validator/'));
   
+  /* axios */
+  gulp.src(['node_modules/axios/dist/axios.min.js'])
+    .pipe(gulp.dest(path_libs+'/axios/'));
+
+  /* apexcharts */
+  gulp.src(['node_modules/apexcharts/dist/apexcharts.css'])
+    .pipe(gulp.dest(path_libs+'/apexcharts/'));
+  gulp.src(['node_modules/apexcharts/dist/apexcharts.min.js'])
+    .pipe(gulp.dest(path_libs+'/apexcharts/'));
+  
   done();
 });
 

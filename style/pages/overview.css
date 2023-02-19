@@ -1,0 +1,33 @@
+.overview-package-widget {
+  padding: 1rem;
+  border: 1px solid var(--color_gray-ll);
+  border-radius: 0.5rem;
+  background-color: var(--color_white);
+  box-shadow: 0 5px 15px -5px rgba(92, 101, 107, 0.15);
+  height: 100%;
+}
+
+.overview-package-widget .widget_title {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+}
+
+.overview-package-widget .widget_description {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color_gray);
+}
+
+.overview-package-widget .widget_entry {
+  font-weight: bold;
+}
+
+.overview-package-widget .widget_value {
+  color: var(--color_gray);
+}
+
+.overview-package-widget .widget_chart {
+  height: 6rem;
+  margin-bottom: 0.5rem;
+}

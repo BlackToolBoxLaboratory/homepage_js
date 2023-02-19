@@ -1,17 +1,19 @@
 {
   "route": {
     "about": "About",
+    "overview": "Overview",
     "packages": "Packages",
     "languages": "Languages",
     "validator": "Validator"
   },
+  "overview": {
+    "version_colon": "Version: ",
+    "release_colon": "Release Date: ",
+    "download_colon": "Latest Downloads: ",
+    "downloads_colon": "Weekly Downloads: "
+  },
   "about": {
-    "description": "I aim to develope some useful tool for front-end development. And they are based on JavaScript only so we could use them into some other JavaScript frameworks. And they are called \"prototype-\" as their prefix means we can use them with React, Vue, ... so on. While using, if you find some questions, bugs or issues. Or having some ideas. Please feel free to let me know.",
-    "donate": {
-      "1": "If you like all the works in BTB Lab. Please ",
-      "2": "buy me a coffee",
-      "3": "."
-    }
+    "description": "I aim to develope some useful tool for front-end development. And they are based on JavaScript only so we could use them into some other JavaScript frameworks. And they are called \"prototype-\" as their prefix means we can use them with React, Vue, ... so on. While using, if you find some questions, bugs or issues. Or having some ideas. Please feel free to let me know."
   },
   "package": {
     "version_colon": "Version: ",

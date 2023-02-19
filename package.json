@@ -20,7 +20,7 @@
   },
   "author": {
     "name": "Van Noel",
-    "email": "vannoel0628@gmail.com"
+    "email": "vannoel@cogman.org"
   },
   "license": "MIT",
   "bugs": {
@@ -31,6 +31,7 @@
     "@blacktoolbox/prototype-languages": "^1.1.1",
     "@blacktoolbox/prototype-validator": "^1.0.0",
     "@fortawesome/fontawesome-free": "^5.13.1",
+    "apexcharts": "^3.37.0",
     "jquery": "^3.5.0"
   },
   "devDependencies": {

@@ -44,7 +44,6 @@
   color: var(--color_gray-l);
   padding: 0 0 0.25rem;
   margin-bottom: 1rem;
-  font-family: Arial, 'Times New Roman', Times, serif, 'PingFang TC', 'Microsoft JhengHei';
   border-bottom: 1px solid var(--color_gray-l);
 }
 .page .page_section .section_block {
