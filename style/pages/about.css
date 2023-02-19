@@ -1,8 +1,12 @@
+#about .title_main {
+  line-height: 1.75rem;
+}
 #about .title_main.main-sm {
   display: none;
 }
 
 #about .title_sub {
+  line-height: 1.25rem;
   color: var(--color_gray);
 }
 
