@@ -188,6 +188,7 @@
     function renderChart(type, packageName, data) {
       var options = createDownloadChartOptions(type);
       options.series = [{
+        name: top.envLang.translate('chart.times')
         data
       }];
       options.chart.type = "area";
