@@ -1,5 +1,5 @@
-const createDownloadChartOptions = (type) => {
-  let color = '';
+const createDownloadChartOptions = function (type) {
+  var color = '';
   switch (type) {
     case 'js':
       color = "#f0db4f";
