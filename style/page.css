@@ -21,6 +21,9 @@
 }
 .page .page_head .head_linkBtn {
   text-decoration: none;
+  font-size: 1.25rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 .page .page_head .head_linkBtn.linkBtn-github:hover {
   color: var(--color_github);
@@ -31,8 +34,10 @@
 
 .page .page_title {
   font-size: 1.5rem;
+  line-height: 2.25rem;
   margin: 0;
   display: inline-block;
+  vertical-align: middle;
 }
 
 .page .page_section + .page_section {
