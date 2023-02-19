@@ -37,3 +37,7 @@ a:visited {
 a:hover {
   color: var(--color_primary);
 }
+
+a.inline-link {
+  margin-left: 0.5rem;
+}
