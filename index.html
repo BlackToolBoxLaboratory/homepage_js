@@ -1,324 +1,316 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="Cache-Control" content="no-cache" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="./libs/fontawesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="./style/index.css">
-    <link rel="stylesheet" type="text/css" href="./style/pages/main.css">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <title>BTB Lab. | JavaScript </title>
-    <meta name="google-site-verification" content="XjkUm8M885lvmNSs9BKe9khMCQY99rSfGsN3Tf6yfBY" />
+  <link rel="stylesheet" type="text/css" href="./libs/fontawesome/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="./style/index.css">
+  <link rel="stylesheet" type="text/css" href="./style/pages/main.css">
 
-    <meta property="og:title" content="Black Tool Box Laboratory | JavaScript"/> 
-    <meta property="og:type" content="website"/> 
-    <meta property="og:url" content="https://blacktoolboxlaboratory.github.io/javascript"/>
-    <meta property="og:image" content=""/>
-    <meta name="description" property="og:description" content="Here are some components based on pure JavaScript which made by Black Tool Box Laboratory."/> 
-    
-    <meta property="fb:app_id" content="271733690121245"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <title>BTB Lab. | JavaScript </title>
+  <meta name="google-site-verification" content="XjkUm8M885lvmNSs9BKe9khMCQY99rSfGsN3Tf6yfBY" />
 
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:site" content="@vannoel0628" />
-    <meta name="twitter:creator" content="@vannoel0628" />
-  </head>
-  <body id="main">
-    <div class="main_container">
-      <header class="main_header padding-sm">
-        <div class="header_logo margin-sm radius-md">
-          <div class="logo_content font-3xl font-bold">
-            BJ
-          </div>
-        </div>
-        <div class="header_title margin-sm">
-          <div class="title_main main-md font-bold font-lg">
-            Black Tool Box Laboratory
-          </div>
-          <div class="title_main main-sm font-bold font-lg">
-            BTB
-          </div>
-          <div class="title_sub sub-md">
-            For JavaScript
-          </div>
-          <div class="title_sub sub-sm">
-            For JS
-          </div>
-        </div>
-        <div id="homepage_opener" class="header_item margin-md">
-          <i class="fas fa-building fa-fw header_button font-lg" onclick="openLab()"></i>
-        </div>
-        <div id="homepage_opener" class="header_item margin-md">
-          <i class="fas fa-home fa-fw header_button font-lg" onclick="redirectHomepage()"></i>
-        </div>
-        <div id="language_opener" class="header_item item-lang margin-md">
-          <i class="fas fa-globe fa-fw header_button font-lg" onclick="toggleLangMenu()"></i>
-          <div id="language_menu" class="lang_container menu-hidden"></div>
-        </div>
+  <meta property="og:title" content="Black Tool Box Laboratory | JavaScript" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://blacktoolboxlaboratory.github.io/javascript" />
+  <meta property="og:image" content="" />
+  <meta name="description" property="og:description"
+    content="Here are some components based on pure JavaScript which made by Black Tool Box Laboratory." />
 
-        <div id="menu_trigger" class="header_item margin-md">
-          <i class="fas fa-bars fa-fw header_button font-lg" onclick="togglePageMenu()"></i>
+  <meta property="fb:app_id" content="271733690121245" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@vannoel0628" />
+  <meta name="twitter:creator" content="@vannoel0628" />
+</head>
+
+<body id="main">
+  <div class="main_container">
+    <header class="main_header padding-sm">
+      <div class="header_logo margin-sm radius-md">
+        <div class="logo_content font-3xl font-bold">
+          BJ
         </div>
-      </header>
-      <iframe id="page" class="main_iframe" src=""></iframe>
-      <div class="main_footNav">
-        <a class="footNav_linkBtn linkBtn-github" href="https://github.com/BlackToolBoxLaboratory" target="_blank">
-          <i class="fab fa-github fa-fw"></i>
-        </a>
-        <a class="footNav_linkBtn linkBtn-npm" href="https://www.npmjs.com/org/blacktoolbox" target="_blank">
-          <i class="fab fa-npm fa-fw"></i>
-        </a>
-        <a class="footNav_linkBtn linkBtn-linkedin" href="https://www.linkedin.com/company/black-tool-box-laboratory/" target="_blank">
-          <i class="fab fa-linkedin fa-fw"></i>
-        </a>
-        <a class="footNav_linkBtn linkBtn-email" href="mailto:vannoel@cogman.org" target="_blank">
-          <i class="far fa-envelope fa-fw"></i>
-        </a>
       </div>
-      <footer class="main_footer font-xs padding-md">
-        Copyright © Black Tool Box Laboratory. All rights reserved.
-      </footer>
-      <aside id="pageMenu_container" class="main_aside "></aside>
+      <div class="header_title margin-sm">
+        <div class="title_main main-md font-bold font-lg">
+          Black Tool Box Laboratory
+        </div>
+        <div class="title_main main-sm font-bold font-lg">
+          BTB
+        </div>
+        <div class="title_sub sub-md">
+          For JavaScript
+        </div>
+        <div class="title_sub sub-sm">
+          For JS
+        </div>
+      </div>
+      <a id="homepage_opener" class="header_item margin-md" href="https://blacktoolboxlaboratory.github.io/"
+        target="_blank" rel="noreferrer">
+        <i class="fas fa-building fa-fw header_button font-lg"></i>
+      </a>
+      <a id="homepage_opener" class="header_item margin-md" href="/">
+        <i class="fas fa-home fa-fw header_button font-lg"></i>
+      </a>
+      <div id="language_opener" class="header_item item-lang margin-md">
+        <i class="fas fa-globe fa-fw header_button font-lg" onclick="toggleLangMenu()"></i>
+        <div id="language_menu" class="lang_container menu-hidden"></div>
+      </div>
+
+      <div id="menu_trigger" class="header_item margin-md">
+        <i class="fas fa-bars fa-fw header_button font-lg" onclick="togglePageMenu()"></i>
+      </div>
+    </header>
+    <iframe id="page" class="main_iframe" src=""></iframe>
+    <div class="main_footNav">
+      <a class="footNav_linkBtn linkBtn-github" href="https://github.com/BlackToolBoxLaboratory" target="_blank">
+        <i class="fab fa-github fa-fw"></i>
+      </a>
+      <a class="footNav_linkBtn linkBtn-npm" href="https://www.npmjs.com/org/blacktoolbox" target="_blank">
+        <i class="fab fa-npm fa-fw"></i>
+      </a>
+      <a class="footNav_linkBtn linkBtn-linkedin" href="https://www.linkedin.com/company/black-tool-box-laboratory/"
+        target="_blank">
+        <i class="fab fa-linkedin fa-fw"></i>
+      </a>
+      <a class="footNav_linkBtn linkBtn-email" href="mailto:vannoel@cogman.org" target="_blank">
+        <i class="far fa-envelope fa-fw"></i>
+      </a>
     </div>
+    <footer class="main_footer font-xs padding-md">
+      Copyright © Black Tool Box Laboratory. All rights reserved.
+    </footer>
+    <aside id="pageMenu_container" class="main_aside "></aside>
+  </div>
 
-    <script type="text/javascript" src="./libs/prototype-languages/index.min.js"></script>
-    <script type="text/javascript" src="./libs/prototype-validator/index.min.js"></script>
-    <script type="text/javascript" src="./libs/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="./plugins/prototype-languages.js"></script>
-    <script type="text/javascript" src="./plugins/prototype-validator.js"></script>
-    <script>
-      const routeMap = [
+  <script type="text/javascript" src="./libs/prototype-languages/index.min.js"></script>
+  <script type="text/javascript" src="./libs/prototype-validator/index.min.js"></script>
+  <script type="text/javascript" src="./libs/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="./plugins/prototype-languages.js"></script>
+  <script type="text/javascript" src="./plugins/prototype-validator.js"></script>
+  <script>
+    const routeMap = [
       {
-          id: "ABOUT",
-          path: "about", 
-          title:"About", 
-          langIndex: "route.about",
-          url: "./pages/about.html",
-        },
-        {
-          id: "OVERVIEW",
-          path: "overview", 
-          title:"Overview", 
-          langIndex: "route.overview",
-          url: "./pages/overview.html",
-        },
-        {
-          id: "PACKAGES",
-          path: "packages", 
-          title: "Packages",
-          langIndex: "route.packages",
-          children: [
-            {
-              id: "PACKAGES_LANGUAGES",
-              path: "packages/languages",
-              title: "Languages",
-              langIndex: "route.languages",
-              url: "./pages/languages.html"
-            },
-            {
-              id: "PACKAGES_VALIDATOR",
-              path: "packages/validator",
-              title: "Validator",
-              langIndex: "route.validator",
-              url: "./pages/validator.html"
-            }
-          ]
-        }
-      ];
-      const REG_HASH = /^#\/(.*)$/;
-      const DEFAULT_ROUTE = 'about';
-      const SIZE_MD = 768;
-
-      var envLang = new window.BTBLang.class();
-
-      const LS_Name = 'BTBLAb';
-      var LS_Object = (localStorage.getItem(LS_Name) && JSON.parse(localStorage.getItem(LS_Name))) || {};
-
-      function detectLang() {
-        if(LS_Object.lang)
-        {
-          envLang.set(LS_Object.lang)
-          window.BTBLang.langLoader(LS_Object.lang, translateAll);
-        } else {
-          const userLang = window.navigator.language || window.navigator.userLanguage; 
-          const result = envLang.menu().find((item) => {
-            return userLang.search(new RegExp(item.index, 'i')) >= 0;
-          });
-          setLanguage((result)? result.index : envLang.get().index);
-        }
+        id: "ABOUT",
+        path: "about",
+        title: "About",
+        langIndex: "route.about",
+        url: "./pages/about.html",
+      },
+      {
+        id: "OVERVIEW",
+        path: "overview",
+        title: "Overview",
+        langIndex: "route.overview",
+        url: "./pages/overview.html",
+      },
+      {
+        id: "PACKAGES",
+        path: "packages",
+        title: "Packages",
+        langIndex: "route.packages",
+        children: [
+          {
+            id: "PACKAGES_LANGUAGES",
+            path: "packages/languages",
+            title: "Languages",
+            langIndex: "route.languages",
+            url: "./pages/languages.html"
+          },
+          {
+            id: "PACKAGES_VALIDATOR",
+            path: "packages/validator",
+            title: "Validator",
+            langIndex: "route.validator",
+            url: "./pages/validator.html"
+          }
+        ]
       }
+    ];
+    const REG_HASH = /^#\/(.*)$/;
+    const DEFAULT_ROUTE = 'about';
+    const SIZE_MD = 768;
 
-      function renderPageMenu() {
-        var menu = "";
-        menu += "<div class=\"aside_menu padding-x-lg\">";
-        menu += renderPageMenuRecursive(0, routeMap);
-        menu += "</div>"
-        $("#pageMenu_container").html(menu);
+    var envLang = new window.BTBLang.class();
+
+    const LS_Name = 'BTBLAb';
+    var LS_Object = (localStorage.getItem(LS_Name) && JSON.parse(localStorage.getItem(LS_Name))) || {};
+
+    function detectLang() {
+      if (LS_Object.lang) {
+        envLang.set(LS_Object.lang)
+        window.BTBLang.langLoader(LS_Object.lang, translateAll);
+      } else {
+        const userLang = window.navigator.language || window.navigator.userLanguage;
+        const result = envLang.menu().find((item) => {
+          return userLang.search(new RegExp(item.index, 'i')) >= 0;
+        });
+        setLanguage((result) ? result.index : envLang.get().index);
       }
-      function renderPageMenuRecursive (layer, map) {
-        var route = "";
-        if(map && map.length > 0) {
-          route += "<ul class=\"menu_layer layer-"+ layer +"\">";
-          map.forEach(function(entry) {
-            var paddingLeft = layer*16;
-            var classActive = (REG_HASH.exec(window.location.hash) && entry.path === REG_HASH.exec(window.location.hash)[1])? 'route-active' : '';
-            route += "<li class=\"layer_container\">";
-            if(entry.children)
-            {
-              route += "<div id=\""+entry.id+"\" class=\"container_route route-submenu padding-y-sm\" onclick=\"toggleMenuCollapsed('"+entry.id+"')\">";
-              route += "<div class=\"route_title\" style=\"padding-left:"+paddingLeft+"px\" btb-lang="+entry.langIndex+">"+entry.title+"</div>";
-              route += "<div class=\"route_collapsed transition-transform\"><i class=\"fas fa-caret-down fa-fw\"></i></div>";
-              route += "</div>";
-              route += renderPageMenuRecursive(layer+1, entry.children);
-            } else {
-              route += "<div id=\""+entry.id+"\" class=\"container_route route-endNode padding-y-sm\" onclick=\"redirectHash('"+entry.path+"')\">";
-              route += "<div class=\"route_title\" style=\"padding-left:"+paddingLeft+"px\" btb-lang="+entry.langIndex+">"+entry.title+"</div>";
-              route += "</div>";
-            }
-            route += "</li>";
-          });
-          route += "</ul>";
-        };
-        return route;
+    }
+
+    function renderPageMenu() {
+      var menu = "";
+      menu += "<div class=\"aside_menu padding-x-lg\">";
+      menu += renderPageMenuRecursive(0, routeMap);
+      menu += "</div>"
+      $("#pageMenu_container").html(menu);
+    }
+    function renderPageMenuRecursive(layer, map) {
+      var route = "";
+      if (map && map.length > 0) {
+        route += "<ul class=\"menu_layer layer-" + layer + "\">";
+        map.forEach(function (entry) {
+          var paddingLeft = layer * 16;
+          var classActive = (REG_HASH.exec(window.location.hash) && entry.path === REG_HASH.exec(window.location.hash)[1]) ? 'route-active' : '';
+          route += "<li class=\"layer_container\">";
+          if (entry.children) {
+            route += "<div id=\"" + entry.id + "\" class=\"container_route route-submenu padding-y-sm\" onclick=\"toggleMenuCollapsed('" + entry.id + "')\">";
+            route += "<div class=\"route_title\" style=\"padding-left:" + paddingLeft + "px\" btb-lang=" + entry.langIndex + ">" + entry.title + "</div>";
+            route += "<div class=\"route_collapsed transition-transform\"><i class=\"fas fa-caret-down fa-fw\"></i></div>";
+            route += "</div>";
+            route += renderPageMenuRecursive(layer + 1, entry.children);
+          } else {
+            route += "<div id=\"" + entry.id + "\" class=\"container_route route-endNode padding-y-sm\">";
+            route += "<a href=" + '#/' + entry.path + " class=\"route_title\" style=\"padding-left:" + paddingLeft + "px\" btb-lang=" + entry.langIndex + ">" + entry.title + "</a>";
+            route += "</div>";
+          }
+          route += "</li>";
+        });
+        route += "</ul>";
       };
-      function redirectURL(path) {
-        var route = searchRouteRecursive(path, routeMap);
-        $('.container_route').removeClass("route-active");
-        $('#'+route.id).addClass("route-active");
-        $("#page").attr("src", route.url);
-      }
-      function searchRouteRecursive(path, source) {
-        for(var i=0;i<source.length;i++)
-        {
-          if(source[i].path === path) {
+      return route;
+    };
+    function redirectURL(path) {
+      var route = searchRouteRecursive(path, routeMap);
+      $('.container_route').removeClass("route-active");
+      $('#' + route.id).addClass("route-active");
+      $("#page").attr("src", route.url);
+    }
+    function searchRouteRecursive(path, source) {
+      for (var i = 0; i < source.length; i++) {
+        if (source[i].path === path) {
+          return source[i];
+        } else if (path.search(source[i].path) === 0) {
+          if (source[i].children && source[i].children.length > 0) {
+            return searchRouteRecursive(path, source[i].children);
+          } else {
             return source[i];
-          } else if (path.search(source[i].path)===0) {
-            if(source[i].children && source[i].children.length>0)
-            {
-              return searchRouteRecursive(path, source[i].children);
-            } else {
-              return source[i];
-            }
           }
         }
-        return {};
       }
-      function toggleMenuCollapsed(id, state) {
-        var target_collapse = $('#'+id).children(".route_collapsed");
-        var target_layer = $('#'+id).siblings(".menu_layer");
-        switch(state) {
-          case "off":
-            target_collapse.removeClass("collapsed-on");
-            target_layer.stop().slideDown();
-            break;
-          case "on":
-            target_collapse.addClass("collapsed-on");
-            target_layer.stop().slideUp();
-            break;
-          default:
-            if(target_collapse.hasClass("collapsed-on")) {
-              toggleMenuCollapsed(id, 'off');
-            } else {
-              toggleMenuCollapsed(id, 'on');
-            }
-            break;
-        }
+      return {};
+    }
+    function toggleMenuCollapsed(id, state) {
+      var target_collapse = $('#' + id).children(".route_collapsed");
+      var target_layer = $('#' + id).siblings(".menu_layer");
+      switch (state) {
+        case "off":
+          target_collapse.removeClass("collapsed-on");
+          target_layer.stop().slideDown();
+          break;
+        case "on":
+          target_collapse.addClass("collapsed-on");
+          target_layer.stop().slideUp();
+          break;
+        default:
+          if (target_collapse.hasClass("collapsed-on")) {
+            toggleMenuCollapsed(id, 'off');
+          } else {
+            toggleMenuCollapsed(id, 'on');
+          }
+          break;
       }
-      function redirectHash(path) {
-        window.location.hash = "/"+ path;
+    }
+    function configHashRouter(target) {
+      var result = REG_HASH.exec(target.location.hash);
+      if (result && result[1]) {
+        redirectURL(REG_HASH.exec(target.location.hash)[1]);
+      } else {
+        target.location.hash = '/' + DEFAULT_ROUTE;
+        redirectURL(DEFAULT_ROUTE);
       }
-      function configHashRouter(target) {
-        var result = REG_HASH.exec(target.location.hash);
-        if(result && result[1])
-        {
-          redirectURL(REG_HASH.exec(target.location.hash)[1]);
-        } else {
-          target.location.hash = '/' + DEFAULT_ROUTE;
-          redirectURL(DEFAULT_ROUTE);
-        }
+    }
+    function renderLangMenu() {
+      var menu = "";
+      menu += "<ul class=\"lang_menu padding-y-sm padding-x-md radius-sm font-sm\">";
+      envLang.menu().forEach(function (entry) {
+        var classActive = (entry.index === envLang.get().index) ? 'option-active' : '';
+        menu += "<li class=\"menu_option padding-y-sm padding-x-md " + classActive + "\" onclick=\"setLanguage('" + entry.index + "')\">" + entry.label + "</li>";
+      })
+      menu += "</ul>"
+      $('#language_menu').html(menu)
+    }
+    function toggleLangMenu(state) {
+      switch (state) {
+        case 'hide':
+          $("#language_menu").addClass("menu-hidden");
+          break;
+        case 'show':
+          $("#language_menu").removeClass("menu-hidden");
+          break;
+        default:
+          if ($("#language_menu").hasClass("menu-hidden")) {
+            toggleLangMenu('show');
+          } else {
+            toggleLangMenu('hide');
+          }
+          break;
       }
-      function openLab() {
-        window.open('https://blacktoolboxlaboratory.github.io/');
-      }
-      function redirectHomepage() {
-        location.href = location.origin + location.pathname;
-      }
-      function renderLangMenu() {
-        var menu = "";
-        menu += "<ul class=\"lang_menu padding-y-sm padding-x-md radius-sm font-sm\">";
-        envLang.menu().forEach(function(entry){
-          var classActive = (entry.index === envLang.get().index)? 'option-active' : '';
-          menu += "<li class=\"menu_option padding-y-sm padding-x-md "+classActive+"\" onclick=\"setLanguage('"+ entry.index +"')\">"+entry.label+"</li>";
-        })
-        menu += "</ul>"
-        $('#language_menu').html(menu)
-      }
-      function toggleLangMenu(state) {
-        switch(state) {
-          case 'hide':
-            $("#language_menu").addClass("menu-hidden");
-            break;
-          case 'show':
-            $("#language_menu").removeClass("menu-hidden");
-            break;
-          default:
-            if($("#language_menu").hasClass("menu-hidden")) {
-              toggleLangMenu('show');
-            } else {
-              toggleLangMenu('hide');
-            }
-            break;
-        }
-      }
-      function setLanguage (value) {
-        LS_Object.lang = value;
-        localStorage.setItem(LS_Name, JSON.stringify(LS_Object));
-        window.location.reload();
-      }
-      function togglePageMenu(state) {
-        switch(state) {
-          case 'hide':
-            $("#pageMenu_container").addClass("menu-hidden");
-            break;
-          case 'show':
-            $("#pageMenu_container").removeClass("menu-hidden");
-            break;
-          default:
-            if($("#pageMenu_container").hasClass("menu-hidden")) {
-              togglePageMenu('show');
-            } else {
-              togglePageMenu('hide');
-            }
-            break;
-        }
-      }
-      function loadEvent () {
-        window.onhashchange=function(event){
-          configHashRouter(event.target);
-          if(window.innerWidth < SIZE_MD) {
+    }
+    function setLanguage(value) {
+      LS_Object.lang = value;
+      localStorage.setItem(LS_Name, JSON.stringify(LS_Object));
+      window.location.reload();
+    }
+    function togglePageMenu(state) {
+      switch (state) {
+        case 'hide':
+          $("#pageMenu_container").addClass("menu-hidden");
+          break;
+        case 'show':
+          $("#pageMenu_container").removeClass("menu-hidden");
+          break;
+        default:
+          if ($("#pageMenu_container").hasClass("menu-hidden")) {
+            togglePageMenu('show');
+          } else {
             togglePageMenu('hide');
           }
+          break;
+      }
+    }
+    function loadEvent() {
+      window.onhashchange = function (event) {
+        configHashRouter(event.target);
+        if (window.innerWidth < SIZE_MD) {
+          togglePageMenu('hide');
         }
-      };
-      function translateAll() {
-        $('[btb-lang]').each(function(index, entry){
-          $(entry).html(envLang.translate(entry.getAttribute('btb-lang')))
-        })
-      };
+      }
+    };
+    function translateAll() {
+      $('[btb-lang]').each(function (index, entry) {
+        $(entry).html(envLang.translate(entry.getAttribute('btb-lang')))
+      })
+    };
 
-      $(document).ready(function(){
-        if(window.innerWidth < SIZE_MD) {
-          $("#pageMenu_container").addClass("menu-hidden");
-        }
-        detectLang();
-        renderLangMenu();
-        renderPageMenu();
-        configHashRouter(window);
-        loadEvent();
-      });
-    </script>
-  </body>
+    $(document).ready(function () {
+      if (window.innerWidth < SIZE_MD) {
+        $("#pageMenu_container").addClass("menu-hidden");
+      }
+      detectLang();
+      renderLangMenu();
+      renderPageMenu();
+      configHashRouter(window);
+      loadEvent();
+    });
+  </script>
+</body>
+
 </html>

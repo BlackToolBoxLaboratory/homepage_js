@@ -114,7 +114,12 @@
   color: var(--color_primary);
 } 
 #main .container_route .route_title {
+  color: #ffffff;
+  text-decoration: none;
   flex-grow: 1;
+}
+#main .container_route .route_title:hover {
+  color: var(--color_primary);
 }
 #main .container_route .route_collapsed {
   flex-shrink: 0;
