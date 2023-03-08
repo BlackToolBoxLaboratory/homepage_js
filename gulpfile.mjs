@@ -1,8 +1,8 @@
-const gulp = require('gulp');
-const del = require('del');
+import gulp from 'gulp';
+import { deleteAsync } from 'del';
 
-const autoprefixer = require('gulp-autoprefixer');
-const cleanCSS = require('gulp-clean-css');
+import autoprefixer from "gulp-autoprefixer";
+import cleanCSS from "gulp-clean-css";
 
 const path_libs = './libs'
 const path_page = '../blacktoolboxlaboratory.github.io/javascript';
@@ -42,7 +42,7 @@ gulp.task('copyVendor', function (done) {
 
 gulp.task('updateHomePage', async function (done) {
   /* clean files */
-  await del([path_page + '/'], { force: true })
+  await deleteAsync([path_page + '/'], { force: true })
 
   /* html & ico*/
   gulp.src(['index.html', 'favicon.ico'])
@@ -95,7 +95,7 @@ gulp.task('updateHomePage', async function (done) {
 
 gulp.task('backupCodebase', async function (done) {
   /* clean files */
-  await del([path_backup + '/'], { force: true })
+  await deleteAsync([path_backup + '/'], { force: true })
 
   /* src */
   gulp.src(['style/**/*'])
