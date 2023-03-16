@@ -86,6 +86,9 @@ gulp.task('updateHomePage', async function (done) {
   gulp.src(['utils/*'])
     .pipe(gulp.dest(path_page + '/utils/'))
 
+  /* og:image */
+  gulp.src(['logo_JavaScript.png']).pipe(gulp.dest(path_page));
+
   /* sitemap */
   gulp.src(['sitemap.xml'])
     .pipe(gulp.dest(path_page))
