@@ -1,0 +1,23 @@
+{# Locale setting #}
+{% set locale = "zh-Hant" %}
+{% import "../locales/" + locale + ".njk" as localeObject %}
+{% set lang = localeObject.lang %}
+
+{# Page setting #}
+{% set page = {
+  title: lang.route.main,
+  description: lang.about.description,
+  css: "packages",
+  key: "validator"
+} %}
+
+{# Layout #}
+{% extends "../components/layout/layout.njk" %}
+
+{# Content #}
+{% block content %}
+{% include "../components/packages/validator/index.njk" %}
+{% endblock %}
+
+{# Javascripts #}
+{% block javascript %}{% endblock %}

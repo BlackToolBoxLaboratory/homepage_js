@@ -1,0 +1,13 @@
+version: '3'
+services:
+  frontend:
+    container_name: homepage_js
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes: 
+      - ./dist:/usr/share/nginx/html/javascript
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 8080:80

@@ -1,0 +1,36 @@
+{% set packageNames = [
+  {
+    key: "languages",
+    version: "1.1.1",
+    release: "2020-01-20"
+  },
+  {
+    key: "validator",
+    version: "1.0.0",
+    release: "2020-01-20"
+  }
+]
+%}
+
+<div class="page_container">
+  <div class="page_section text-center">
+    <img class="margin-y-lg" src="/javascript/images/BTB_JavaScript.png" alt="BTB_JS">
+    <h1 class="title_main main-md font-xl margin-y-sm">Black Tool Box Laboratory</h1>
+    <h1 class="title_main main-sm font-xl margin-y-sm">BTB Lab.</h1>
+    <p class="title_sub margin-y-sm">For JavaScript</p>
+  </div>
+  <div class="page_section">
+    {{ lang.home.description }}
+  </div>
+  <div class="page_section text-center">
+    <a href="mailto:vannoel@cogman.org" target="_blank">
+      <i class="far fa-envelope fa-fw"></i>
+      <span>vannoel@cogman.org</span>
+    </a>
+  </div>
+  
+  {% for package in packageNames %}
+    {% include "./divider.njk" %}
+    {% include "./package.njk" %}
+  {% endfor %}
+</div>

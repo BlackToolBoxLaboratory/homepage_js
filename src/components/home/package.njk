@@ -1,0 +1,23 @@
+<div class="page_section section-package grid-row">
+  <div class="grid-col col-md-3">
+    <div class="package_title font-bold">
+      {{ lang.route[package.key] }}
+    </div>
+    <a href="#" onclick="redirectHash('packages/languages')">
+      <i class="fas fa-link fa-fw"></i>
+    </a>
+  </div>
+  <div class="grid-col col-md">
+    <div class="package_description">
+      {{ lang.package[package.key].description }}
+    </div>
+    <div class="packageVersion margin-y-sm">
+      <span>{{ lang.package.version_colon }}</span>
+      <span>{{ package.version }}</span>
+    </div>
+    <div class="packageDate margin-y-sm">
+      <span>{{ lang.package.release_colon }}</span>
+      <span>{{ package.release }}</span>
+    </div>
+  </div>
+</div>

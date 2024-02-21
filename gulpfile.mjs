@@ -1,129 +1,126 @@
-import gulp from 'gulp';
-import { deleteAsync } from 'del';
-
+import gulp from "gulp";
+import nunjucksRender from "gulp-nunjucks-render";
 import autoprefixer from "gulp-autoprefixer";
 import cleanCSS from "gulp-clean-css";
+import { deleteAsync } from "del";
 
-const path_libs = './libs'
-const path_page = '../blacktoolboxlaboratory.github.io/javascript';
-var path_backup = '../codebase/homepage_js';
+const path_src = "./src/";
+const path_dist = "./dist/";
 
-gulp.task('copyVendor', function (done) {
+const path_libs = "./src/libs/";
+const path_files = "./src/files/";
+
+const path_page = "../blacktoolboxlaboratory.github.io/javascript";
+
+const { src, dest, task } = gulp;
+
+task("copyVendor", async function (done) {
+  /* clean files */
+  await deleteAsync([path_libs, path_files], { force: true });
+
   /* jQuery */
-  gulp.src(['node_modules/jquery/dist/jquery.min.js'])
-    .pipe(gulp.dest(path_libs + '/jquery/'));
+  src(["node_modules/jquery/dist/jquery.min.js"]).pipe(
+    dest(path_libs + "jquery/")
+  );
 
   /* fontawesome */
-  gulp.src(['node_modules/@fortawesome/fontawesome-free/css/**/*'])
-    .pipe(gulp.dest(path_libs + '/fontawesome/css'));
-  gulp.src(['node_modules/@fortawesome/fontawesome-free/webfonts/**/*'])
-    .pipe(gulp.dest(path_libs + '/fontawesome/webfonts'));
+  src(["node_modules/@fortawesome/fontawesome-free/css/**/*"]).pipe(
+    dest(path_libs + "fontawesome/css")
+  );
+  src(["node_modules/@fortawesome/fontawesome-free/webfonts/**/*"]).pipe(
+    dest(path_libs + "fontawesome/webfonts")
+  );
 
   /* @blacktoolbox/prototype-languages */
-  gulp.src(['node_modules/@blacktoolbox/prototype-languages/umd/index.min.js'])
-    .pipe(gulp.dest(path_libs + '/prototype-languages/'));
+  src(["node_modules/@blacktoolbox/prototype-languages/umd/index.min.js"]).pipe(
+    dest(path_libs + "prototype-languages/")
+  );
 
   /* @blacktoolbox/prototype-validator */
-  gulp.src(['node_modules/@blacktoolbox/prototype-validator/umd/index.min.js'])
-    .pipe(gulp.dest(path_libs + '/prototype-validator/'));
+  src(["node_modules/@blacktoolbox/prototype-validator/umd/index.min.js"]).pipe(
+    dest(path_libs + "prototype-validator/")
+  );
 
   /* axios */
-  gulp.src(['node_modules/axios/dist/axios.min.js'])
-    .pipe(gulp.dest(path_libs + '/axios/'));
+  src(["node_modules/axios/dist/axios.min.js"]).pipe(
+    dest(path_libs + "axios/")
+  );
 
   /* apexcharts */
-  gulp.src(['node_modules/apexcharts/dist/apexcharts.css'])
-    .pipe(gulp.dest(path_libs + '/apexcharts/'));
-  gulp.src(['node_modules/apexcharts/dist/apexcharts.min.js'])
-    .pipe(gulp.dest(path_libs + '/apexcharts/'));
+  src(["node_modules/apexcharts/dist/apexcharts.css"]).pipe(
+    dest(path_libs + "apexcharts/")
+  );
+  src(["node_modules/apexcharts/dist/apexcharts.min.js"]).pipe(
+    dest(path_libs + "apexcharts/")
+  );
+
+  /* google fonts */
+  src(["node_modules/@fontsource/ubuntu/files/*-400-normal.*"]).pipe(
+    dest(path_files + "ubuntu")
+  );
+  src(["node_modules/@fontsource/varela-round/files/*-400-normal.*"]).pipe(
+    dest(path_files + "varela-round")
+  );
 
   done();
 });
 
-gulp.task('updateHomePage', async function (done) {
+task("build", async function (done) {
   /* clean files */
-  await deleteAsync([path_page + '/'], { force: true })
+  await deleteAsync([path_dist], { force: true });
 
-  /* html & ico*/
-  gulp.src(['index.html', 'favicon.ico'])
-    .pipe(gulp.dest(path_page));
+  /* ico */
+  src([path_src + "favicon.ico"]).pipe(dest(path_dist));
+
+  /* html */
+  src(path_src + "pages/**/*.njk")
+    .pipe(
+      nunjucksRender({
+        path: [
+          path_src + "pages",
+          path_src + "locales",
+          path_src + "components",
+        ],
+      })
+    )
+    .pipe(dest(path_dist));
 
   /* style */
-  gulp.src(['style/index.css'])
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(autoprefixer('last 2 versions'))
-    .pipe(gulp.dest(path_page + '/style'))
-  gulp.src(['style/pages/*'])
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(autoprefixer('last 2 versions'))
-    .pipe(gulp.dest(path_page + '/style/pages'))
+  src([path_src + "style/index.css", path_src + "style/pages/**/*"])
+    .pipe(cleanCSS({ compatibility: "ie8" }))
+    .pipe(autoprefixer("last 2 versions"))
+    .pipe(dest(path_dist + "/style"));
 
   /* font */
-  gulp.src(['style/google-fonts/*'])
-    .pipe(gulp.dest(path_page + '/style/google-fonts/'))
-
-  /* libs */
-  gulp.src(['libs/**/*'])
-    .pipe(gulp.dest(path_page + '/libs/'))
-
-  /* plugins */
-  gulp.src(['plugins/*'])
-    .pipe(gulp.dest(path_page + '/plugins/'))
-
-  /* languages */
-  gulp.src(['languages/*'])
-    .pipe(gulp.dest(path_page + '/languages/'))
+  src([path_src + "files/**/*"]).pipe(dest(path_dist + "/files/"));
 
   /* images */
-  gulp.src(['images/*'])
-    .pipe(gulp.dest(path_page + '/images/'))
+  src([path_src + "images/*"]).pipe(dest(path_dist + "/images/"));
 
-  /* pages */
-  gulp.src(['pages/*'])
-    .pipe(gulp.dest(path_page + '/pages/'))
+  /* libs */
+  src([path_src + "libs/**/*"]).pipe(gulp.dest(path_dist + "/libs/"));
 
   /* plugins */
-  gulp.src(['utils/*'])
-    .pipe(gulp.dest(path_page + '/utils/'))
+  src([path_src + "plugins/*"]).pipe(dest(path_dist + "/plugins/"));
 
-  /* og:image */
-  gulp.src(['logo_JavaScript.png']).pipe(gulp.dest(path_page));
+  /* locales */
+  src([path_src + "locales/*"]).pipe(dest(path_dist + "/locales/"));
+
+  /* plugins */
+  src([path_src + "utils/*"]).pipe(dest(path_dist + "/utils/"));
 
   /* sitemap */
-  gulp.src(['sitemap.xml'])
-    .pipe(gulp.dest(path_page))
+  src([path_src + "sitemap.xml"]).pipe(dest(path_dist));
 
   done();
 });
 
-gulp.task('backupCodebase', async function (done) {
-  /* clean files */
-  await deleteAsync([path_backup + '/'], { force: true })
+gulp.task("updateHomePage", async function (done) {
+  // /* clean files */
+  await deleteAsync([path_page + "/"], { force: true });
 
-  /* src */
-  gulp.src(['style/**/*'])
-    .pipe(gulp.dest(path_backup + '/style/'));
-  gulp.src(['style/google-fonts/*'])
-    .pipe(gulp.dest(path_backup + '/style/google-fonts/'));
-  gulp.src(['plugins/*'])
-    .pipe(gulp.dest(path_backup + '/plugins/'));
-  gulp.src(['languages/*'])
-    .pipe(gulp.dest(path_backup + '/languages/'));
-  gulp.src(['images/*'])
-    .pipe(gulp.dest(path_backup + '/images/'));
-  gulp.src(['pages/*'])
-    .pipe(gulp.dest(path_backup + '/pages/'));
-  /* others */
-  gulp.src([
-    'LICENSE',
-    'README.md',
-    'package.json',
-    'package-lock.json',
-    'gulpfile.js',
-    'index.html',
-    'favicon.ico',
-    'sitemap.xml'
-  ])
-    .pipe(gulp.dest(path_backup));
+  /* sitemap */
+  gulp.src([path_dist + "**/*"]).pipe(gulp.dest(path_page));
+
   done();
 });

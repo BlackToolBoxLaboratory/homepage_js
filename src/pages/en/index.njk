@@ -1,0 +1,23 @@
+{# Locale setting #}
+{% set locale = "en" %}
+{% import "../locales/" + locale + ".njk" as localeObject %}
+{% set lang = localeObject.lang %}
+
+{# Page setting #}
+{% set page = {
+  title: lang.route.main,
+  description: lang.about.description,
+  css: "home",
+  key: "home"
+} %}
+
+{# Layout #}
+{% extends "../components/layout/layout.njk" %}
+
+{# Content #}
+{% block content %}
+{% include "../components/home/index.njk" %}
+{% endblock %}
+
+{# Javascripts #}
+{% block javascript %}{% endblock %}

@@ -1,0 +1,37 @@
+#home .title_main {
+  line-height: 1.75rem;
+}
+#home .title_main.main-sm {
+  display: none;
+}
+
+#home .title_sub {
+  line-height: 1.25rem;
+  color: var(--color_gray);
+}
+
+#home .packageVersion,
+#home .packageDate {
+  color: var(--color_gray-l);
+}
+
+#home .page_section.section-package .package_title {
+  display: inline-block;
+}
+
+/* Lower small size */
+@media only screen and (max-width : 576px) {
+  #home .title_main.main-md {
+    display: none;
+  }
+  #home .title_main.main-sm {
+    display: initial;
+  }
+
+  #home .page_section.section-package .package_title {
+    font-size: 1.25rem;
+  }
+  #home .page_section.section-package .package_description {
+    margin-top: 0.5rem;
+  }
+}

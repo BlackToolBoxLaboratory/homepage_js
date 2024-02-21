@@ -1,7 +1,7 @@
 {
   "name": "homepage_js",
   "private": true,
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "HomePage of BTB Lab. for JavaScript",
   "keywords": [
     "BTBLaboratory",
@@ -11,8 +11,8 @@
   "main": "index.js",
   "scripts": {
     "copyVendor": "gulp copyVendor",
-    "build": "gulp build",
-    "updateHomePage": "gulp build && gulp updateHomePage"
+    "updateHomePage": "gulp updateHomePage",
+    "backupCodebase": "gulp backupCodebase"
   },
   "repository": {
     "type": "git",
@@ -26,22 +26,19 @@
   "bugs": {
     "url": "https://github.com/BlackToolBoxLaboratory/homepage_js/issues"
   },
-  "homepage": "https://blacktoolbox.cogman.org/javascript/",
-  "devDependencies": {
-    "del": "^7.1.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^9.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-nunjucks-render": "^2.2.3"
-  },
+  "homepage": "https://blacktoolboxlaboratory.github.io/javascript",
   "dependencies": {
     "@blacktoolbox/prototype-languages": "^1.1.1",
     "@blacktoolbox/prototype-validator": "^1.0.0",
-    "@fontsource/ubuntu": "^5.0.8",
-    "@fontsource/varela-round": "^5.0.8",
-    "@fortawesome/fontawesome-free": "^6.5.1",
-    "apexcharts": "^3.45.2",
-    "axios": "^1.6.7",
-    "jquery": "^3.7.1"
+    "@fortawesome/fontawesome-free": "^6.3.0",
+    "apexcharts": "^3.37.0",
+    "axios": "^1.3.3",
+    "jquery": "^3.5.0"
+  },
+  "devDependencies": {
+    "del": "^7.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0"
   }
 }
